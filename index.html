@@ -3,7 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="محمد المضر - حلول تسويق وأتمتة أعمال مع n8n والذكاء الاصطناعي">
+    <meta name="description" content="محمد المضر - خدمات أتمتة العمليات والتسويق باستخدام n8n وإنشاء محتوى ذكي بالذكاء الاصطناعي">
+    <meta name="keywords" content="أتمتة, n8n, تسويق, ذكاء اصطناعي, محتوى">
+    <meta name="author" content="محمد المضر">
+    <meta property="og:title" content="محمد المضر | أتمتة التسويق والعمليات">
+    <meta property="og:description" content="تسويقك وشغلك يشتغلون لحالهم، وانت تركّز على النمو">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mhmdalmdr.github.io">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="محمد المضر | أتمتة التسويق والعمليات">
+    <meta name="twitter:description" content="خدمات أتمتة العمليات والتسويق باستخدام n8n والذكاء الاصطناعي">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
     <title>محمد المضر | أتمتة التسويق والعمليات</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,15 +36,52 @@
             line-height: 1.6;
         }
 
+        /* Fade-in Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
         /* Header & Navigation */
         header {
             position: sticky;
             top: 0;
             background: linear-gradient(135deg, #0f766e 0%, #155e5a 100%);
             color: white;
-            padding: 1rem 0;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            padding: 1.2rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             z-index: 1000;
+            animation: slideInDown 0.6s ease-out;
         }
 
         nav {
@@ -51,11 +98,17 @@
             font-weight: 700;
             color: #f2a93b;
             text-decoration: none;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             list-style: none;
             align-items: center;
         }
@@ -63,13 +116,26 @@
         .nav-links a {
             color: white;
             text-decoration: none;
-            font-size: 1rem;
-            transition: color 0.3s ease;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
             font-weight: 500;
+            position: relative;
+            padding-bottom: 0.3rem;
         }
 
-        .nav-links a:hover {
-            color: #f2a93b;
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background-color: #f2a93b;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
         .mobile-toggle {
@@ -79,37 +145,66 @@
             color: white;
             font-size: 1.5rem;
             cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-toggle:hover {
+            transform: scale(1.1);
         }
 
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #0f766e 0%, #155e5a 50%, #0f766e 100%);
             color: white;
-            padding: 6rem 2rem;
+            padding: 8rem 2rem;
             text-align: center;
-            min-height: 500px;
+            min-height: 550px;
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: rgba(242, 169, 59, 0.08);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(30px); }
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
         }
 
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 1.5rem;
             font-weight: 700;
-            line-height: 1.4;
+            line-height: 1.3;
+            letter-spacing: -0.5px;
         }
 
         .hero-subtitle {
-            font-size: 1.1rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.95;
+            font-size: 1.15rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
             font-weight: 400;
+            line-height: 1.8;
         }
 
         .hero-buttons {
@@ -117,19 +212,21 @@
             gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
+            animation: fadeIn 1.2s ease-out;
         }
 
         .btn {
-            padding: 0.9rem 2rem;
+            padding: 1rem 2.2rem;
             font-size: 1rem;
             border: none;
-            border-radius: 0.5rem;
+            border-radius: 0.6rem;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
             font-weight: 600;
-            transition: all 0.3s ease;
+            transition: all 0.35s ease;
             font-family: 'IBM Plex Sans Arabic', sans-serif;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
         .btn-primary {
@@ -139,8 +236,8 @@
 
         .btn-primary:hover {
             background-color: #f0a828;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(242, 169, 59, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(242, 169, 59, 0.35);
         }
 
         .btn-secondary {
@@ -152,24 +249,61 @@
         .btn-secondary:hover {
             background-color: white;
             color: #0f766e;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-call {
+            background-color: #3b82f6;
+            color: white;
+        }
+
+        .btn-call:hover {
+            background-color: #2563eb;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        /* About Section */
+        .about {
+            background-color: white;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: right;
+        }
+
+        .about-content p {
+            font-size: 1.05rem;
+            color: #374151;
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+        }
+
+        .about-content strong {
+            color: #0f766e;
+            font-weight: 600;
         }
 
         /* Section Styling */
         section {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 5rem 2rem;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 3rem;
+            font-size: 2.4rem;
+            margin-bottom: 3.5rem;
             color: #0f766e;
             font-weight: 700;
             position: relative;
-            padding-bottom: 1rem;
+            padding-bottom: 1.2rem;
+            letter-spacing: -0.3px;
         }
 
         .section-title::after {
@@ -178,10 +312,10 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
+            width: 120px;
+            height: 5px;
             background: linear-gradient(90deg, #0f766e, #f2a93b);
-            border-radius: 2px;
+            border-radius: 3px;
         }
 
         /* Services Section */
@@ -191,71 +325,111 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
         }
 
         .service-card {
             background: white;
-            padding: 2rem;
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            border-right: 4px solid #0f766e;
+            padding: 2.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-right: 5px solid #0f766e;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(242, 169, 59, 0.1), rgba(15, 118, 110, 0.05));
+            opacity: 0;
+            transition: opacity 0.4s ease;
         }
 
         .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
             border-right-color: #f2a93b;
         }
 
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
         .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
             color: #f2a93b;
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.15) rotate(10deg);
         }
 
         .service-card h3 {
             color: #0f766e;
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
+            font-size: 1.35rem;
+            margin-bottom: 1.2rem;
             font-weight: 700;
+            position: relative;
+            z-index: 1;
         }
 
         .service-card p {
             color: #6b7280;
-            line-height: 1.7;
+            line-height: 1.75;
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 1;
         }
 
         /* How We Work Section */
         .how-we-work {
             background-color: white;
+            border-top: 1px solid #e5e7eb;
+            border-bottom: 1px solid #e5e7eb;
         }
 
         .steps-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2.5rem;
             counter-reset: step-counter;
         }
 
         .step {
-            background: #f9fafb;
-            padding: 2rem;
-            border-radius: 0.75rem;
+            background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+            padding: 2.5rem 2rem;
+            border-radius: 1rem;
             text-align: center;
             position: relative;
             counter-increment: step-counter;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            border: 1px solid #e5e7eb;
+        }
+
+        .step:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(15, 118, 110, 0.1);
+            border-color: #f2a93b;
         }
 
         .step::before {
             content: counter(step-counter);
             position: absolute;
-            top: -15px;
-            right: 30px;
-            width: 40px;
-            height: 40px;
+            top: -20px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 50px;
+            height: 50px;
             background: linear-gradient(135deg, #0f766e, #155e5a);
             color: white;
             border-radius: 50%;
@@ -263,20 +437,22 @@
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
+            box-shadow: 0 4px 12px rgba(15, 118, 110, 0.2);
         }
 
         .step h3 {
             color: #0f766e;
-            font-size: 1.2rem;
-            margin-top: 1.5rem;
+            font-size: 1.25rem;
+            margin-top: 1.8rem;
             margin-bottom: 1rem;
             font-weight: 700;
         }
 
         .step p {
             color: #6b7280;
-            line-height: 1.6;
+            line-height: 1.7;
+            font-size: 0.95rem;
         }
 
         /* Tools Section */
@@ -286,38 +462,42 @@
 
         .tools-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 2rem;
         }
 
         .tool-item {
             background: white;
-            padding: 1.5rem;
-            border-radius: 0.5rem;
+            padding: 2rem 1.5rem;
+            border-radius: 1rem;
             text-align: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
         }
 
         .tool-item:hover {
-            box-shadow: 0 4px 12px rgba(15, 118, 110, 0.15);
-            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(15, 118, 110, 0.12);
+            transform: translateY(-6px) scale(1.08);
+            border-color: #f2a93b;
         }
 
         .tool-item h4 {
             color: #0f766e;
             font-size: 1rem;
-            margin-top: 0.5rem;
+            margin-top: 1rem;
             font-weight: 600;
         }
 
         /* FAQ Section */
         .faq {
             background-color: white;
+            border-top: 1px solid #e5e7eb;
+            border-bottom: 1px solid #e5e7eb;
         }
 
         .faq-container {
-            max-width: 700px;
+            max-width: 750px;
             margin: 0 auto;
         }
 
@@ -333,18 +513,20 @@
 
         .faq-question {
             background-color: #f9fafb;
-            padding: 1.5rem;
-            border-radius: 0.5rem;
+            padding: 1.8rem;
+            border-radius: 0.75rem;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: all 0.3s ease;
+            transition: all 0.35s ease;
             user-select: none;
+            border-right: 3px solid transparent;
         }
 
         .faq-question:hover {
-            background-color: #eeeff3;
+            background-color: #f3f4f6;
+            border-right-color: #f2a93b;
         }
 
         .faq-question h3 {
@@ -353,6 +535,7 @@
             font-weight: 600;
             margin: 0;
             flex: 1;
+            text-align: right;
         }
 
         .faq-toggle {
@@ -360,6 +543,7 @@
             font-size: 1.5rem;
             font-weight: 700;
             transition: transform 0.3s ease;
+            margin-left: 1.5rem;
         }
 
         .faq-item.active .faq-toggle {
@@ -368,17 +552,18 @@
 
         .faq-answer {
             background-color: #ffffff;
-            padding: 1.5rem;
-            border-radius: 0 0 0.5rem 0.5rem;
+            padding: 1.8rem;
+            border-radius: 0 0 0.75rem 0.75rem;
             color: #6b7280;
-            line-height: 1.7;
+            line-height: 1.8;
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease;
+            transition: max-height 0.35s ease;
+            font-size: 0.95rem;
         }
 
         .faq-item.active .faq-answer {
-            max-height: 300px;
+            max-height: 400px;
         }
 
         /* Contact Section */
@@ -398,11 +583,12 @@
 
         .contact-description {
             font-size: 1.1rem;
-            margin-bottom: 2.5rem;
-            max-width: 600px;
+            margin-bottom: 3rem;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
             opacity: 0.95;
+            line-height: 1.8;
         }
 
         .contact-buttons {
@@ -419,8 +605,8 @@
 
         .btn-whatsapp:hover {
             background-color: #20ba5d;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
         }
 
         .btn-email {
@@ -430,8 +616,38 @@
 
         .btn-email:hover {
             background-color: #f0a828;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(242, 169, 59, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(242, 169, 59, 0.35);
+        }
+
+        /* Floating WhatsApp Button */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            width: 60px;
+            height: 60px;
+            background-color: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+            z-index: 999;
+            animation: fadeIn 1s ease-out 0.5s both;
+        }
+
+        .floating-whatsapp:hover {
+            transform: scale(1.15);
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+        }
+
+        .floating-whatsapp:active {
+            transform: scale(0.95);
         }
 
         /* Footer */
@@ -439,30 +655,33 @@
             background-color: #1f2937;
             color: #9ca3af;
             text-align: center;
-            padding: 2rem;
+            padding: 2.5rem;
             border-top: 1px solid #374151;
         }
 
         footer p {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
         }
 
         .footer-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-top: 1.5rem;
+            gap: 2.5rem;
+            margin-top: 2rem;
             flex-wrap: wrap;
         }
 
         .footer-links a {
             color: #9ca3af;
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            font-weight: 500;
         }
 
         .footer-links a:hover {
             color: #f2a93b;
+            transform: translateY(-2px);
         }
 
         /* Responsive Design */
@@ -475,8 +694,9 @@
                 left: 0;
                 background: #0f766e;
                 flex-direction: column;
-                padding: 1rem;
+                padding: 1.5rem;
                 gap: 1rem;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             }
 
             .nav-links.active {
@@ -487,8 +707,17 @@
                 display: block;
             }
 
+            .hero {
+                padding: 4rem 1.5rem;
+                min-height: auto;
+            }
+
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
             }
 
             .hero-buttons {
@@ -501,48 +730,65 @@
             }
 
             .section-title {
-                font-size: 1.8rem;
+                font-size: 2rem;
+                margin-bottom: 2.5rem;
             }
 
             .services-grid,
             .steps-grid,
             .tools-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .hero {
-                padding: 3rem 1rem;
-                min-height: auto;
+                gap: 1.5rem;
             }
 
             section {
-                padding: 2rem 1rem;
+                padding: 3.5rem 1.5rem;
+            }
+
+            .service-card {
+                padding: 2rem;
+            }
+
+            .step {
+                padding: 2rem 1.5rem;
             }
 
             .contact-buttons {
                 flex-direction: column;
+                gap: 1rem;
             }
 
-            .contact-buttons .btn {
-                width: 100%;
+            .floating-whatsapp {
+                width: 55px;
+                height: 55px;
+                font-size: 1.6rem;
+                bottom: 1.5rem;
+                left: 1.5rem;
+            }
+
+            .about-content {
+                padding: 0 1rem;
             }
         }
 
         @media (max-width: 480px) {
             .hero h1 {
-                font-size: 1.5rem;
+                font-size: 1.6rem;
+                line-height: 1.3;
             }
 
             .hero-subtitle {
-                font-size: 0.95rem;
+                font-size: 0.9rem;
+                margin-bottom: 2rem;
             }
 
             .section-title {
                 font-size: 1.5rem;
+                margin-bottom: 2rem;
             }
 
             .logo {
-                font-size: 1.4rem;
+                font-size: 1.3rem;
             }
 
             .nav-links {
@@ -550,7 +796,51 @@
             }
 
             .nav-links a {
+                font-size: 0.85rem;
+            }
+
+            .service-card,
+            .step {
+                padding: 1.5rem;
+            }
+
+            .service-card h3,
+            .step h3 {
+                font-size: 1.1rem;
+            }
+
+            .service-icon {
+                font-size: 2.8rem;
+            }
+
+            .faq-question,
+            .faq-answer {
+                padding: 1.2rem;
+            }
+
+            .faq-question h3 {
+                font-size: 0.95rem;
+            }
+
+            .contact-description {
+                font-size: 0.95rem;
+            }
+
+            .btn {
+                padding: 0.85rem 1.5rem;
                 font-size: 0.9rem;
+            }
+
+            .floating-whatsapp {
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+                bottom: 1rem;
+                left: 1rem;
+            }
+
+            .footer-links {
+                gap: 1.5rem;
             }
         }
     </style>
@@ -559,9 +849,10 @@
     <!-- Header -->
     <header>
         <nav>
-            <a href="#" class="logo">محمد المضر</a>
+            <a href="#" class="logo">⚡ محمد المضر</a>
             <button class="mobile-toggle" id="mobile-toggle">☰</button>
             <ul class="nav-links" id="nav-links">
+                <li><a href="#about">عني</a></li>
                 <li><a href="#services">الخدمات</a></li>
                 <li><a href="#how-we-work">كيفية العمل</a></li>
                 <li><a href="#tools">الأدوات</a></li>
@@ -575,11 +866,20 @@
     <section class="hero">
         <div class="hero-content">
             <h1>تسويقك وشغلك يشتغلون لحالهم، وانت تركّز على النمو</h1>
-            <p class="hero-subtitle">أتمتة كاملة للعمليات والتسويق باستخدام n8n والذكاء الاصطناعي</p>
+            <p class="hero-subtitle">أتمتة كاملة للعمليات والتسويق باستخدام n8n، إنشاء محتوى ذكي بالذكاء الاصطناعي، ونشر آلي على جميع المنصات</p>
             <div class="hero-buttons">
                 <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">احصل على استشارة مجانية</button>
-                <button class="btn btn-secondary" onclick="document.getElementById('how-we-work').scrollIntoView({behavior: 'smooth'})">تعرف على خدماتنا</button>
+                <button class="btn btn-secondary" onclick="document.getElementById('how-we-work').scrollIntoView({behavior: 'smooth'})">تعرف على الخدمات</button>
             </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-content">
+            <h2 class="section-title">عني</h2>
+            <p>أنا <strong>محمد المضر</strong>، متخصص في أتمتة العمليات والتسويق الرقمي. أساعد رواد الأعمال والشركات الصغيرة والمتوسطة في توفير الوقت والموارد من خلال حلول أتمتة متقدمة باستخدام <strong>n8n</strong> والذكاء الاصطناعي.</p>
+            <p>أؤمن بأن التكنولوجيا يجب أن تعمل لصالحك، وليس العكس. من خلال خبرتي، أقوم بتصميم وتطبيق حلول مخصصة تناسب احتياجاتك الفريدة، مما يسمح لك بالتركيز على ما يهمك حقاً: <strong>نمو عملك</strong>.</p>
         </div>
     </section>
 
@@ -590,17 +890,17 @@
             <div class="service-card">
                 <div class="service-icon">🤖</div>
                 <h3>أتمتة العمليات</h3>
-                <p>نقوم بأتمتة العمليات الروتينية والمعقدة باستخدام n8n، مما يوفر الوقت والموارد ويقلل الأخطاء البشرية بشكل كبير.</p>
+                <p>أتمتة العمليات الروتينية والمعقدة باستخدام n8n، مما يوفر الوقت والموارد بشكل كبير ويقلل الأخطاء البشرية إلى الحد الأدنى.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">📢</div>
                 <h3>أتمتة التسويق</h3>
-                <p>إدارة شاملة لحملات التسويق الآلية، بما فيها البريد الإلكتروني والرسائل النصية والوسائط الاجتماعية بكفاءة عالية.</p>
+                <p>إدارة شاملة لحملات التسويق الآلية، بما فيها البريد الإلكتروني، الرسائل النصية، والوسائط الاجتماعية بكفاءة عالية وتتبع دقيق.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">✨</div>
                 <h3>إنشاء محتوى ذكي</h3>
-                <p>استخدام الذكاء الاصطناعي لإنشاء محتوى جذاب مثل الفيديوهات القصيرة والمنشورات والنشر الآلي على جميع المنصات.</p>
+                <p>استخدام الذكاء الاصطناعي لإنشاء محتوى جذاب مثل الفيديوهات القصيرة والمنشورات والمقالات والنشر الآلي على جميع المنصات.</p>
             </div>
         </div>
     </section>
@@ -611,19 +911,19 @@
         <div class="steps-grid">
             <div class="step">
                 <h3>فهم احتياجاتك</h3>
-                <p>نستمع إلى احتياجاتك وتحدياتك لفهم الأولويات والأهداف بشكل دقيق.</p>
+                <p>نستمع إلى احتياجاتك وتحدياتك بعمق لفهم الأولويات والأهداف بشكل دقيق وشامل.</p>
             </div>
             <div class="step">
                 <h3>تصميم الحل</h3>
-                <p>ننشئ حلاً مخصصاً يناسب احتياجاتك باستخدام أحدث التقنيات والأدوات.</p>
+                <p>ننشئ حلاً مخصصاً يناسب احتياجاتك تماماً باستخدام أحدث التقنيات والأدوات المتاحة.</p>
             </div>
             <div class="step">
                 <h3>التطبيق والتدريب</h3>
-                <p>نقوم بتطبيق الحل وتدريبك على كيفية استخدامه بفعالية.</p>
+                <p>نقوم بتطبيق الحل بدقة وتدريبك والفريق الخاص بك على كيفية استخدامه بفعالية وكفاءة.</p>
             </div>
             <div class="step">
                 <h3>المتابعة والتحسين</h3>
-                <p>نتابع الأداء باستمرار ونقوم بالتحسينات اللازمة لضمان النتائج الأمثل.</p>
+                <p>نتابع الأداء باستمرار ونقوم بالتحسينات اللازمة لضمان تحقيق أفضل النتائج المتوقعة.</p>
             </div>
         </div>
     </section>
@@ -669,7 +969,7 @@
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>n8n هي منصة أتمتة قوية وسهلة الاستخدام تتيح لك ربط التطبيقات المختلفة وأتمتة العمليات الروتينية دون الحاجة لكتابة أكواد برمجية معقدة. تساعدك على توفير الوقت والموارد بشكل كبير.</p>
+                    <p>n8n هي منصة أتمتة قوية وسهلة الاستخدام تتيح لك ربط التطبيقات المختلفة وأتمتة العمليات الروتينية دون الحاجة لكتابة أكواد برمجية معقدة. تساعدك على توفير الوقت والموارد بشكل كبير، وتزيد الإنتاجية بسهولة.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -678,7 +978,7 @@
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>لا، أنت لا تحتاج لأي خبرة تقنية. نحن نقوم بكل شيء لك ونوفر لك التدريب الكامل على كيفية استخدام الأنظمة والأدوات. نهدف لجعل كل شيء سهلاً وبسيطاً.</p>
+                    <p>لا، أنت لا تحتاج لأي خبرة تقنية على الإطلاق. نحن نقوم بكل شيء لك ونوفر لك التدريب الكامل على كيفية استخدام الأنظمة والأدوات. نهدف لجعل كل شيء سهلاً وبسيطاً وسلسلاً للاستخدام.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -687,7 +987,7 @@
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>يعتمد ذلك على تعقيد احتياجاتك، لكن معظم الحلول يتم تطبيقها في غضون أسبوع إلى شهر. سنناقش الجدول الزمني معك مسبقاً حتى تعرف بالضبط ما تتوقعه.</p>
+                    <p>يعتمد ذلك على تعقيد احتياجاتك وحجم العمليات التي تريد أتمتتها. لكن معظم الحلول يتم تطبيقها في غضون أسبوع إلى شهر. سنناقش الجدول الزمني معك مسبقاً حتى تعرف بالضبط ما تتوقعه.</p>
                 </div>
             </div>
         </div>
@@ -700,16 +1000,21 @@
             جاهز لأخذ عملك إلى المستوى التالي؟ تواصل معنا اليوم للحصول على استشارة مجانية وتطبيق الحل المناسب لاحتياجاتك.
         </p>
         <div class="contact-buttons">
-            <a href="https://wa.me/966" class="btn btn-whatsapp">تواصل عبر WhatsApp</a>
-            <a href="mailto:contact@example.com" class="btn btn-email">أرسل بريد إلكتروني</a>
+            <a href="https://wa.me/201140267198" class="btn btn-whatsapp" title="تواصل عبر WhatsApp">💬 WhatsApp</a>
+            <a href="tel:+201140267198" class="btn btn-call" title="اتصل بنا">📞 اتصل</a>
+            <a href="mailto:mhmdalmdrdwdw@gmail.com" class="btn btn-email" title="أرسل بريد إلكتروني">📧 البريد الإلكتروني</a>
         </div>
     </section>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/201140267198" class="floating-whatsapp" title="تواصل معنا على WhatsApp">💬</a>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 محمد المضر. جميع الحقوق محفوظة.</p>
         <p>حلول أتمتة متخصصة لنمو عملك</p>
         <div class="footer-links">
+            <a href="#about">عني</a>
             <a href="#services">الخدمات</a>
             <a href="#how-we-work">كيفية العمل</a>
             <a href="#contact">تواصل</a>
@@ -732,7 +1037,7 @@
             });
         });
 
-        // FAQ Toggle
+        // FAQ Toggle with smooth animation
         const faqItems = document.querySelectorAll('.faq-item');
 
         faqItems.forEach(item => {
@@ -744,6 +1049,16 @@
                     }
                 });
                 item.classList.toggle('active');
+            });
+        });
+
+        // Smooth scroll for buttons
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                }
             });
         });
     </script>
