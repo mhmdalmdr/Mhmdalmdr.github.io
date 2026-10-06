@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MZ - وكالة توريد وتجارة تربط التجار في السودان بالمصانع في مصر. خدمات البحث عن مصانع والتفاوض على الأسعار والفحص والشحن.">
+    <meta name="description" content="MZ - وكالة توريد وتجارة تربط التجار في السودان بالمصانع في مصر. اشتري من المصنع مباشرة بسعر أفضل وأمان أكثر.">
     <meta name="theme-color" content="#12263f">
-    <meta property="og:title" content="MZ | وكالة توريد وتجارة السودان-مصر">
-    <meta property="og:description" content="نوصّلك من المصنع المصري إلى محلّك في السودان">
+    <meta property="og:title" content="MZ | اشتري من المصنع المصري مباشرة">
+    <meta property="og:description" content="شراء آمن وسعر عادل بدون وسطاء. توصيل مباشر لمحلك في السودان.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mhmdalmdr.github.io">
-    <title>MZ | وكالة توريد وتجارة السودان-مصر</title>
+    <title>MZ | شراء مباشر من المصانع المصرية</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -79,7 +79,7 @@
         .hero {
             background: #f7f8fa;
             border-bottom: 1px solid #e2e8f0;
-            padding: 6rem 2rem;
+            padding: 5.5rem 2rem 4rem;
         }
 
         .hero-content {
@@ -90,9 +90,9 @@
 
         .hero h1 {
             color: #12263f;
-            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-size: clamp(1.9rem, 4vw, 3rem);
             line-height: 1.35;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             font-weight: 700;
         }
 
@@ -100,7 +100,7 @@
             color: #4b5563;
             max-width: 640px;
             margin: 0 auto 2rem;
-            font-size: 1.08rem;
+            font-size: 1.05rem;
         }
 
         .hero-buttons {
@@ -108,6 +108,7 @@
             justify-content: center;
             gap: 1rem;
             flex-wrap: wrap;
+            margin-bottom: 2.2rem;
         }
 
         .btn {
@@ -140,6 +141,23 @@
 
         .btn-secondary:hover { background: #12263f; color: white; }
 
+        .hero-trust {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .trust-point {
+            background: white;
+            border: 1px solid #e2e8f0;
+            padding: 1rem 0.9rem;
+            border-radius: 0.35rem;
+            font-size: 0.9rem;
+            color: #4b5563;
+        }
+
         section {
             max-width: 1200px;
             margin: 0 auto;
@@ -164,22 +182,62 @@
             margin: 0.8rem auto 0;
         }
 
-        .how-it-works, .product-categories, .faq {
+        .problems-section, .how-works-section, .trust-section, .faq-section {
             background: white;
             border-top: 1px solid #e2e8f0;
             border-bottom: 1px solid #e2e8f0;
         }
 
-        .steps-grid {
+        .problems-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .problem-card {
+            background: #f9fafb;
+            border: 1px solid #edf2f7;
+            padding: 1.8rem 1.4rem;
+            border-radius: 0.35rem;
+        }
+
+        .problem-title {
+            color: #12263f;
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .problem-challenge {
+            color: #d94545;
+            background: #fef2f2;
+            padding: 0.8rem;
+            border-right: 3px solid #d94545;
+            margin-bottom: 0.9rem;
+            border-radius: 0.25rem;
+            font-size: 0.93rem;
+            font-weight: 500;
+        }
+
+        .problem-solution {
+            color: #2d7a3e;
+            background: #f0fdf4;
+            padding: 0.8rem;
+            border-right: 3px solid #2d7a3e;
+            border-radius: 0.25rem;
+            font-size: 0.93rem;
+        }
+
+        .how-works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 1.5rem;
         }
 
-        .step {
+        .how-step {
             background: #f9fafb;
             border: 1px solid #edf2f7;
-            padding: 2rem 1.3rem 1.6rem;
+            padding: 1.8rem 1.3rem 1.5rem;
             text-align: center;
             border-radius: 0.35rem;
         }
@@ -195,108 +253,80 @@
             align-items: center;
             justify-content: center;
             font-weight: 700;
+            font-size: 1.2rem;
         }
 
-        .step h3 {
+        .how-step h3 {
             color: #12263f;
             font-size: 1.05rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
+            font-weight: 700;
         }
 
-        .step p {
+        .how-step p {
             color: #4b5563;
             font-size: 0.92rem;
         }
 
-        .offer-grid {
+        .trust-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 1.5rem;
         }
 
-        .offer-card {
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-left: 3px solid #c8963e;
-            padding: 1.7rem 1.4rem;
-            border-radius: 0.4rem;
+        .trust-item {
+            background: #f9fafb;
+            border: 1px solid #edf2f7;
+            padding: 1.6rem 1.3rem;
+            border-right: 3px solid #c8963e;
+            border-radius: 0.35rem;
         }
 
-        .offer-icon {
-            width: 42px;
-            height: 42px;
-            margin-bottom: 0.8rem;
-        }
-
-        .offer-icon svg {
-            width: 42px;
-            height: 42px;
-            stroke: #12263f;
-            stroke-width: 1.7;
-            fill: none;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        .offer-card h3 {
+        .trust-item h3 {
             color: #12263f;
-            margin-bottom: 0.5rem;
-            font-size: 1.15rem;
-        }
-
-        .offer-card p {
-            color: #4b5563;
-            font-size: 0.95rem;
-        }
-
-        .categories-list {
-            max-width: 760px;
-            margin: 0 auto;
-        }
-
-        .categories-list ul {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 0.9rem 1.5rem;
-        }
-
-        .categories-list li {
-            color: #1f2937;
-            border-bottom: 1px solid #edf2f7;
-            padding-bottom: 0.55rem;
-        }
-
-        .categories-list li::before {
-            content: '—';
-            color: #c8963e;
-            margin-left: 0.6rem;
+            font-size: 1.1rem;
+            margin-bottom: 0.6rem;
             font-weight: 700;
         }
 
-        .why-mz-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .why-mz-item {
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 0.4rem;
-            padding: 1.8rem 1.4rem;
-            text-align: center;
-        }
-
-        .why-mz-item h3 {
-            color: #12263f;
-            margin-bottom: 0.6rem;
-            font-size: 1.1rem;
-        }
-
-        .why-mz-item p {
+        .trust-item p {
             color: #4b5563;
             font-size: 0.93rem;
+        }
+
+        .needs-section {
+            background: #f7f8fa;
+        }
+
+        .needs-list {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            border: 1px solid #e2e8f0;
+            padding: 2rem 1.5rem;
+            border-radius: 0.35rem;
+        }
+
+        .needs-list ul {
+            list-style: none;
+        }
+
+        .needs-list li {
+            color: #1f2937;
+            padding: 0.9rem 0;
+            border-bottom: 1px solid #edf2f7;
+            font-size: 0.95rem;
+        }
+
+        .needs-list li:last-child {
+            border-bottom: none;
+        }
+
+        .needs-list li::before {
+            content: '✓';
+            color: #c8963e;
+            margin-left: 0.7rem;
+            font-weight: 700;
         }
 
         .faq-container {
@@ -323,7 +353,7 @@
 
         .faq-question h3 {
             color: #12263f;
-            font-size: 1rem;
+            font-size: 0.98rem;
             font-weight: 600;
         }
 
@@ -347,11 +377,12 @@
         }
 
         .faq-item.active .faq-answer {
-            max-height: 220px;
+            max-height: 280px;
         }
 
         .faq-answer p {
             padding: 1rem 1.2rem 1.2rem;
+            font-size: 0.93rem;
         }
 
         .request-form {
@@ -403,6 +434,49 @@
 
         .form-submit:hover { background: #b7802f; }
 
+        .cta-section {
+            background: #12263f;
+            color: white;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .cta-content {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .cta-message {
+            color: #dbe3ed;
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-whatsapp-large {
+            background: #25d366;
+            color: white;
+            padding: 1.1rem 2.5rem;
+            font-size: 1.05rem;
+        }
+
+        .btn-whatsapp-large:hover { background: #1db65e; }
+
+        .btn-phone-alt {
+            background: #c8963e;
+            color: white;
+            padding: 1.1rem 2.5rem;
+            font-size: 1.05rem;
+        }
+
+        .btn-phone-alt:hover { background: #b7802f; }
+
         .contact {
             background: #12263f;
             color: white;
@@ -449,19 +523,6 @@
             font-size: 0.95rem;
         }
 
-        .contact-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn-whatsapp { background: #25d366; color: white; }
-        .btn-whatsapp:hover { background: #1db65e; }
-
-        .btn-phone { background: #c8963e; color: white; }
-        .btn-phone:hover { background: #b7802f; }
-
         footer {
             background: #0d1d2e;
             color: #a3b2c3;
@@ -507,11 +568,11 @@
 
             .mobile-toggle { display: block; }
 
-            .hero { padding: 4rem 1rem; }
+            .hero { padding: 3.5rem 1rem 3rem; }
 
             section { padding: 3.5rem 1rem; }
 
-            .hero-buttons, .contact-buttons {
+            .hero-buttons, .cta-buttons {
                 flex-direction: column;
                 align-items: stretch;
             }
@@ -530,197 +591,204 @@
             <a href="#" class="logo">MZ</a>
             <button class="mobile-toggle" id="mobile-toggle" aria-label="Open menu">☰</button>
             <ul class="nav-links" id="nav-links">
-                <li><a href="#how-it-works">كيفية العمل</a></li>
-                <li><a href="#what-we-offer">خدماتنا</a></li>
-                <li><a href="#categories">الفئات</a></li>
-                <li><a href="#why-mz">لماذا MZ</a></li>
+                <li><a href="#problems">المشاكل والحل</a></li>
+                <li><a href="#how-works">الخطوات</a></li>
+                <li><a href="#trust">ليش تثق</a></li>
                 <li><a href="#faq">الأسئلة</a></li>
-                <li><a href="#request-form">اطلب الآن</a></li>
+                <li><a href="#request">اطلب</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="hero">
         <div class="hero-content">
-            <h1>نوصّلك من المصنع المصري إلى محلّك في السودان</h1>
-            <p class="hero-subtitle">نربط التجار في السودان بالمصانع المناسبة في مصر عبر بحث، تفاوض، متابعة إنتاج، فحص جودة، ثم شحن وتسليم فعلي إلى وجهتك.</p>
+            <h1>اشتري من المصنع المصري مباشرة بسعر أفضل وأمان أكثر</h1>
+            <p class="hero-subtitle">نحن وسيطك الموثوق. بحث عن المصنع، تفاوض، متابعة، فحص، وتسليم آمن لمحلك في السودان.</p>
             <div class="hero-buttons">
-                <a href="#request-form" class="btn btn-primary">اطلب عرض سعر</a>
-                <a href="#how-it-works" class="btn btn-secondary">كيف نشتغل</a>
+                <button class="btn btn-primary" onclick="document.getElementById('request').scrollIntoView({behavior: 'smooth'})">اطلب عرض سعر</button>
+                <a href="tel:+201140267198" class="btn btn-secondary">اتصل الآن</a>
+            </div>
+            <div class="hero-trust">
+                <div class="trust-point">تواصل مباشر معك على واتساب في كل خطوة</div>
+                <div class="trust-point">عرض سعر مكتوب وواضح قبل أي دفع</div>
+                <div class="trust-point">متابعة معك لين تستلم البضاعة بأمان</div>
             </div>
         </div>
     </section>
 
-    <section id="how-it-works" class="how-it-works">
-        <h2 class="section-title">كيف نشتغل</h2>
-        <div class="steps-grid">
-            <div class="step">
+    <section id="problems" class="problems-section">
+        <h2 class="section-title">المشاكل اللي تواجه التاجر</h2>
+        <div class="problems-grid">
+            <div class="problem-card">
+                <div class="problem-title">لا تعرف المصنع اللي تشتري منه</div>
+                <div class="problem-challenge">المشكلة: تشتري من تاجر وسيط بدون ما تعرف من أين جات البضاعة بالفعل</div>
+                <div class="problem-solution">MZ الحل: نوديك للمصنع الحقيقي. توثيق كامل للمصدر وزيارات للمصانع.</div>
+            </div>
+            <div class="problem-card">
+                <div class="problem-title">الوسطاء يرفعون الأسعار</div>
+                <div class="problem-challenge">المشكلة: تاجر الجملة يحط هامش ربح كبير، فالسعر اللي توصلك غالي جداً</div>
+                <div class="problem-solution">MZ الحل: أنت تتعامل مع المصنع مباشرة. سعر عادل وعمولة واضحة منذ البداية.</div>
+            </div>
+            <div class="problem-card">
+                <div class="problem-title">البضاعة تختلف عن الاتفاق</div>
+                <div class="problem-challenge">المشكلة: تطلب جودة معينة، وتستلم حاجة تانية مختلفة. لا حد يرد الفلوس.</div>
+                <div class="problem-solution">MZ الحل: توثيق كامل بالصور والفيديو. فحص الجودة قبل الشحن. ضمان حسب الاتفاق.</div>
+            </div>
+            <div class="problem-card">
+                <div class="problem-title">التأخير والارتباك في الشحن</div>
+                <div class="problem-challenge">المشكلة: ما حد يقول لك البضاعة راحت فين. الجمارك، الشحن، التسليم... كل واحد يقول حاجة</div>
+                <div class="problem-solution">MZ الحل: نحن نتولى كل شيء. تحديثات منتظمة على واتساب من الطلب لحد ما تستلم.</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-works" class="how-works-section">
+        <h2 class="section-title">كيفية العمل: خمس خطوات واضحة</h2>
+        <div class="how-works-grid">
+            <div class="how-step">
                 <div class="step-number">1</div>
-                <h3>الطلب</h3>
-                <p>تخبرنا بما تحتاجه، والكمية، والمواصفات، والموقع</p>
+                <h3>أخبرنا احتياجك</h3>
+                <p>المنتج، الكمية، المواصفات، السعر المتوقع</p>
             </div>
-            <div class="step">
+            <div class="how-step">
                 <div class="step-number">2</div>
-                <h3>بحث المصنع وعرض السعر</h3>
-                <p>نبحث عن المصنع المناسب ونحصل على عرض سعر مناسب</p>
+                <h3>نبحث عن المصنع</h3>
+                <p>نختار المصنع الأنسب ونحصل على عرض سعر مكتوب</p>
             </div>
-            <div class="step">
+            <div class="how-step">
                 <div class="step-number">3</div>
-                <h3>الاتفاق والدفع</h3>
-                <p>نتفاوض على السعر والشروط، ثم نرتب الاتفاقية والدفع</p>
+                <h3>توافق على السعر</h3>
+                <p>نتفاوض لصالحك، وتوافق على العرض المكتوب</p>
             </div>
-            <div class="step">
+            <div class="how-step">
                 <div class="step-number">4</div>
                 <h3>الإنتاج والفحص</h3>
-                <p>نتابع الإنتاج ونؤكد الجودة قبل الخروج من المصنع</p>
+                <p>نتابع الإنتاج ونفحص الجودة قبل الترك</p>
             </div>
-            <div class="step">
+            <div class="how-step">
                 <div class="step-number">5</div>
-                <h3>الشحن للسودان</h3>
-                <p>نرتب النقل والتخليص والتسليم إلى محلك في السودان</p>
+                <h3>التسليم الآمن</h3>
+                <p>نرتب الشحن والجمارك والتسليم لمحلك بأمان</p>
             </div>
         </div>
     </section>
 
-    <section id="what-we-offer">
-        <h2 class="section-title">ما الذي نقدمه</h2>
-        <div class="offer-grid">
-            <div class="offer-card">
-                <div class="offer-icon">
-                    <svg viewBox="0 0 24 24"><path d="M3 12h18M7 16h10M7 8h10M5 5h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"></path></svg>
-                </div>
-                <h3>البحث عن المصانع</h3>
-                <p>نقارن الخيارات المتاحة ونختار المصنع الأنسب لك من حيث الجودة والسعر والموثوقية.</p>
+    <section id="trust">
+        <h2 class="section-title">ليش تثق في MZ</h2>
+        <div class="trust-grid">
+            <div class="trust-item">
+                <h3>تسعيرة شفافة</h3>
+                <p>عمولتنا واضحة من الأول. لا تفاجآت. كل شيء مكتوب في العرض.</p>
             </div>
-            <div class="offer-card">
-                <div class="offer-icon">
-                    <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5l-5 5-5-5M7 19l5-5 5 5"></path></svg>
-                </div>
-                <h3>التفاوض على السعر</h3>
-                <p>نتفاوض نيابةً عنك للحصول على أفضل السعر وتوازن بين الجودة والالتزام بالميزانية.</p>
+            <div class="trust-item">
+                <h3>عرض سعر مكتوب</h3>
+                <p>قبل ما تدفع فلس واحد، تحصل على وثيقة واضحة بالسعر والشروط.</p>
             </div>
-            <div class="offer-card">
-                <div class="offer-icon">
-                    <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"></path></svg>
-                </div>
-                <h3>فحص الجودة</h3>
-                <p>نتابع الجودة أثناء الإنتاج وبالتأكيد قبل الشحن لتقليل المخاطر عند الاستلام.</p>
+            <div class="trust-item">
+                <h3>صور وفيديوهات</h3>
+                <p>نصور البضاعة قبل الشحن. أنت شايف حاجتك بنفسك.</p>
             </div>
-            <div class="offer-card">
-                <div class="offer-icon">
-                    <svg viewBox="0 0 24 24"><path d="M4 12h16M12 4v16M5 5l14 14M19 5L5 19"></path></svg>
-                </div>
-                <h3>الشحن والمتابعة الجمركية</h3>
-                <p>نرتب الشحن، ونتابع الإجراءات والتجهيزات حتى الوصول إلى السودان بشكل منظم.</p>
+            <div class="trust-item">
+                <h3>تحديثات يومية</h3>
+                <p>نراسلك على واتساب كل يوم. ما حد يختفي أو يسكت عليك.</p>
             </div>
-            <div class="offer-card">
-                <div class="offer-icon">
-                    <svg viewBox="0 0 24 24"><path d="M4 18h16M7 15V8m5 7V5m5 10v-6"></path></svg>
-                </div>
-                <h3>المتابعة بعد البيع</h3>
-                <p>نواصل التواصل بعد الاستلام للتأكد من رضاك وتوفير الدعم عند الحاجة.</p>
+            <div class="trust-item">
+                <h3>قرب من المصانع</h3>
+                <p>نحن موجودين في مصر بجانب المصانع. نتفاوض وجهاً لوجه.</p>
+            </div>
+            <div class="trust-item">
+                <h3>متابعة لين النهاية</h3>
+                <p>عملنا ما ينتهي لين تستلم البضاعة آمنة في السودان.</p>
             </div>
         </div>
     </section>
 
-    <section id="categories" class="product-categories">
-        <h2 class="section-title">فئات المنتجات</h2>
-        <div class="categories-list">
+    <section class="needs-section">
+        <h2 class="section-title">ماذا تحتاج لتبدأ؟</h2>
+        <div class="needs-list">
             <ul>
-                <li>النسيج والملابس</li>
-                <li>الأقمشة والألياف</li>
-                <li>الأحذية والجلود</li>
-                <li>المعادن والحديد</li>
-                <li>البلاستيك والبوليمر</li>
-                <li>الورق والكرتون</li>
-                <li>الكيماويات والطلاء</li>
-                <li>الآلات والمعدات</li>
-                <li>الإضاءة والكهربائيات</li>
-                <li>المواد الغذائية</li>
-                <li>الزيوت والمنتجات البترولية</li>
-                <li>فئات أخرى حسب الطلب</li>
+                <li>اسم المنتج اللي تبغى تشتريه</li>
+                <li>الكمية المطلوبة</li>
+                <li>السعر المستهدف أو الميزانية</li>
+                <li>مدينتك في السودان (للتسليم)</li>
             </ul>
         </div>
     </section>
 
-    <section id="why-mz">
-        <h2 class="section-title">لماذا MZ</h2>
-        <div class="why-mz-grid">
-            <div class="why-mz-item">
-                <h3>نظرة عملية</h3>
-                <p>نعمل مباشرة على احتياجاتك كـتاجر، مع متابعة كل خطوة حتى الاستلام في السودان.</p>
-            </div>
-            <div class="why-mz-item">
-                <h3>روابط صناعة مصرية</h3>
-                <p>نبحث عن موارد مناسبة بشكل عملي، ونتنقل بين المصانع وبصيرة في السوق المصري.</p>
-            </div>
-            <div class="why-mz-item">
-                <h3>التواصل المستمر</h3>
-                <p>نوضح لك كل نقطة، ونخبرك بتقدم التنفيذ، ولا تتركك وحدك في أي مرحلة.</p>
-            </div>
-            <div class="why-mz-item">
-                <h3>حلول مخصصة</h3>
-                <p>لا يوجد نموذج واحد؛ كل طلب يختلف، لذلك نطوّر الحل حسب المنتج والموقع والكمية.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="faq" class="faq">
+    <section id="faq" class="faq-section">
         <h2 class="section-title">الأسئلة الشائعة</h2>
         <div class="faq-container">
             <div class="faq-item">
                 <div class="faq-question">
-                    <h3>كم يستغرق البحث عن المصنع وتقديم العرض؟</h3>
+                    <h3>كم أقل كمية أقدر أشتري؟</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>يعتمد ذلك على نوع المنتج والكمية، لكننا عادةً نبدأ بالبحث السريع ونعرض لك الخيارات في وقت معقول، ثم ننتقل إلى التفاوض مباشرة.</p>
+                    <p>تختلف حسب نوع المنتج والمصنع. بعض المصانع تقبل أوردرات صغيرة، وبعضها يطلب كميات أكبر. لما تخبرنا بالمنتج، نقول لك الحد الأدنى الفعلي.</p>
                 </div>
             </div>
             <div class="faq-item">
                 <div class="faq-question">
-                    <h3>هل يمكنكم التعامل مع طلبات محددة أو غير منتشرة؟</h3>
+                    <h3>ما هي طرق الدفع؟</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>نعم. إذا كان الطلب خاصاً أو يحتاج إلى مواصفات معينة، نعمل على البحث عنه ومراجعة العروض المناسبة وفقاً للمتطلبات.</p>
+                    <p>طرق الدفع تختلف حسب المصنع والكمية. بعض المصانع تقبل حوالة بنكية، وبعضها يطلب دفع مقدم. التفاصيل تكون مكتوبة في العرض النهائي.</p>
                 </div>
             </div>
             <div class="faq-item">
                 <div class="faq-question">
-                    <h3>هل تنظمون الشحن إلى السودان؟</h3>
+                    <h3>كم تستغرق من البداية لحد الاستلام؟</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>نعم، نتابع ترتيب الشحن والإجراءات اللازمة بما يضمن وصول المنتج إلى السودان بشكل منظم، مع متابعة الترتيبات ذات الصلة.</p>
+                    <p>المدة تختلف حسب المنتج والكمية وطريقة الشحن. عموماً: بحث واتفاق (أسبوع)، إنتاج (أسبوعين إلى شهر)، شحن وتسليم (أسبوع إلى أسبوعين). التفاصيل الدقيقة في العرض.</p>
                 </div>
             </div>
             <div class="faq-item">
                 <div class="faq-question">
-                    <h3>هل يمكنني طلب خدمة واحدة فقط؟</h3>
+                    <h3>كيفية فحص الجودة؟ ما الضمان؟</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>بالتأكيد. يمكنك طلب البحث فقط، أو التفاوض فقط، أو المتابعة الكاملة من المصنع إلى الشحن، حسب احتياجك.</p>
+                    <p>نفحص البضاعة في المصنع قبل الشحن ونصورها ونرسل لك الصور. لو فيه عيب، نحل مع المصنع قبل الشحن. الضمان والحقوق تكون محددة في العرض المكتوب.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>من يتحمل تكاليف الجمارك والتسليم؟</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>التفاصيل تحدد في العرض. بعض الأوردرات فيها شحن مجاني لحد الحدود السودانية، وبعضها الجمارك على حسابك. كل شيء واضح ومكتوب قبل الدفع.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>كم عمولتكم؟ وكيفية حسابها؟</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>العمولة تختلف حسب نوع البضاعة والكمية والخدمات. بعض الأوردرات فيها عمولة نسبة من السعر، وبعضها عمولة ثابتة. لما نقدم العرض، نكتب العمولة بوضوح كاملة.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="request-form" class="request-form">
+    <section id="request" class="request-form">
         <h2 class="section-title">أرسل طلبك الآن</h2>
         <div class="form-container">
             <form id="requestForm">
                 <div class="form-group">
-                    <label for="name">الاسم</label>
+                    <label for="name">اسمك</label>
                     <input type="text" id="name" name="name" required>
                 </div>
                 <div class="form-group">
-                    <label for="city">المدينة</label>
+                    <label for="city">مدينتك في السودان</label>
                     <input type="text" id="city" name="city" required>
                 </div>
                 <div class="form-group">
-                    <label for="product">المنتج</label>
+                    <label for="product">اسم المنتج</label>
                     <input type="text" id="product" name="product" required>
                 </div>
                 <div class="form-group">
@@ -728,37 +796,42 @@
                     <input type="text" id="quantity" name="quantity" required>
                 </div>
                 <div class="form-group">
-                    <label for="details">معلومات إضافية</label>
-                    <textarea id="details" name="details" placeholder="اكتب تفاصيل المنتج أو المواصفات أو أي معلومات إضافية"></textarea>
+                    <label for="details">معلومات إضافية (مواصفات، سعر متوقع، الخ)</label>
+                    <textarea id="details" name="details" placeholder="مثال: أريد نسيج 100% قطن، ألوان متنوعة، السعر لا يتجاوز..."></textarea>
                 </div>
-                <button type="submit" class="btn form-submit">إرسال عبر WhatsApp</button>
+                <button type="submit" class="btn form-submit">أرسل الطلب عبر واتساب</button>
             </form>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2 class="section-title">الآن دورك</h2>
+        <div class="cta-content">
+            <p class="cta-message">ما لك إلا أن تخبرنا بما تحتاج. نحن نبقية الشغل على عاتقنا. شراء آمن، سعر عادل، وتسليم موثوق.</p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/201140267198" class="btn btn-whatsapp-large" target="_blank">راسلنا على واتساب الآن</a>
+                <a href="tel:+201140267198" class="btn btn-phone-alt">أو اتصل بنا</a>
+            </div>
         </div>
     </section>
 
     <section id="contact" class="contact">
         <h2 class="section-title">تواصل معنا</h2>
         <div class="contact-content">
-            <p class="contact-description">إذا كنت تحتاج إلى شراء منتج من مصر أو تريد توكيلنا في البحث والتفاوض والمتابعة، تواصل معنا مباشرة.</p>
+            <p class="contact-description">معنا على مدار الأسبوع. اختر الطريقة اللي تناسبك.</p>
             <div class="contact-methods">
                 <div class="contact-method">
                     <h4>واتساب</h4>
                     <a href="https://wa.me/201140267198" target="_blank">+201140267198</a>
                 </div>
                 <div class="contact-method">
-                    <h4>هاتف</h4>
+                    <h4>جوال</h4>
                     <a href="tel:+201140267198">+201140267198</a>
                 </div>
                 <div class="contact-method">
-                    <h4>البريد</h4>
+                    <h4>إيميل</h4>
                     <a href="mailto:mhmdalmdrdwdw@gmail.com">mhmdalmdrdwdw@gmail.com</a>
-                    <br>
-                    <a href="mailto:malmdr71@gmail.com">malmdr71@gmail.com</a>
                 </div>
-            </div>
-            <div class="contact-buttons">
-                <a href="https://wa.me/201140267198" target="_blank" class="btn btn-whatsapp">تواصل عبر WhatsApp</a>
-                <a href="tel:+201140267198" class="btn btn-phone">اتصل بنا</a>
             </div>
         </div>
     </section>
@@ -801,7 +874,7 @@
             const quantity = document.getElementById('quantity').value.trim();
             const details = document.getElementById('details').value.trim();
 
-            const message = `مرحبا، أنا ${name} من مدينة ${city}. أريد طلب منتج: ${product}.\nالكمية: ${quantity}.\n${details ? `معلومات إضافية: ${details}` : ''}`;
+            const message = `مرحبا، أنا ${name} من ${city}.\nأريد شراء: ${product}\nالكمية: ${quantity}${details ? `\nتفاصيل: ${details}` : ''}`;
 
             const whatsapp = 'https://wa.me/201140267198?text=' + encodeURIComponent(message);
             window.open(whatsapp, '_blank');
