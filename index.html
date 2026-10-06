@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MZ - وكالة توريد وتجارة تربط التجار في السودان بالمصانع في مصر. اشتري من المصنع مباشرة بسعر أفضل، مع متابعة الجودة والشحن.">
+    <meta name="description" content="MZ - وكالة توريد وتجارة تربط التجار في السودان بالمصانع في مصر. اشتري من المصنع مباشرة بسعر أحسن.">
     <meta name="theme-color" content="#12263f">
     <meta property="og:title" content="MZ | اشتري من المصنع المصري مباشرة">
     <meta property="og:description" content="شراء آمن وسعر عادل بدون وسطاء. توصيل مباشر لمحلك في السودان.">
@@ -161,6 +161,106 @@
             height: 3px;
             background: #c8963e;
             margin: 0.8rem auto 0;
+        }
+
+        .products-section {
+            background: white;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+        .category-tab {
+            padding: 0.7rem 1.5rem;
+            border: 2px solid #e2e8f0;
+            background: white;
+            color: #1f2937;
+            border-radius: 0.35rem;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+        .category-tab:hover {
+            border-color: #c8963e;
+            color: #c8963e;
+        }
+        .category-tab.active {
+            background: #c8963e;
+            color: white;
+            border-color: #c8963e;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .product-card {
+            background: #f9fafb;
+            border: 1px solid #edf2f7;
+            border-radius: 0.35rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .product-card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            transform: translateY(-4px);
+        }
+        .product-image {
+            width: 100%;
+            height: 220px;
+            background: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #a0aec0;
+            font-size: 3rem;
+            overflow: hidden;
+        }
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 1.5rem;
+        }
+        .product-name {
+            color: #12263f;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+        }
+        .product-description {
+            color: #4b5563;
+            font-size: 0.9rem;
+            margin-bottom: 1.2rem;
+        }
+        .product-btn {
+            width: 100%;
+            background: #c8963e;
+            color: white;
+            padding: 0.8rem 1rem;
+            border-radius: 0.35rem;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+            transition: background 0.2s ease;
+        }
+        .product-btn:hover {
+            background: #b7802f;
+        }
+        .products-content {
+            display: none;
+        }
+        .products-content.active {
+            display: block;
         }
 
         .problems-section, .how-works-section, .faq-section {
@@ -507,6 +607,13 @@
             }
             .btn { width: 100%; }
             .form-container { padding: 1.4rem; }
+            .category-tabs {
+                gap: 0.5rem;
+            }
+            .category-tab {
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+            }
         }
     </style>
 </head>
@@ -516,6 +623,7 @@
             <a href="#" class="logo">MZ</a>
             <button class="mobile-toggle" id="mobile-toggle" aria-label="Open menu">☰</button>
             <ul class="nav-links" id="nav-links">
+                <li><a href="#products">المنتجات</a></li>
                 <li><a href="#problems">المشاكل والحل</a></li>
                 <li><a href="#how-works">الخطوات</a></li>
                 <li><a href="#trust">ليش تثق</a></li>
@@ -528,7 +636,7 @@
     <section class="hero">
         <div class="hero-content">
             <h1>اشتري من المصنع المصري مباشرة</h1>
-            <p class="hero-subtitle">بدون وسطاء، بدون تعقيد، وبسعر أحسن. نبحث لك عن المصنع المناسب، نتفاوض، نتابع الجودة، ثم نرتب التوصيل إلى السودان.</p>
+            <p class="hero-subtitle">بدون وسطاء، بدون تعقيد، وبسعر أحسن. نبحث لك عن المصنع المناسب، نتفاوض، نتابع الجودة، ثم نسلمك البضاعة في السودان.</p>
             <div class="hero-buttons">
                 <button class="btn btn-primary" onclick="document.getElementById('request').scrollIntoView({behavior: 'smooth'})">اطلب عرض سعر</button>
                 <a href="tel:+201140267198" class="btn btn-secondary">اتصل الآن</a>
@@ -537,6 +645,102 @@
                 <div class="trust-point">تواصل مباشر معك على واتساب</div>
                 <div class="trust-point">عرض سعر مكتوب وواضح قبل أي دفع</div>
                 <div class="trust-point">متابعة كاملة لين تستلم البضاعة</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="products-section">
+        <h2 class="section-title">المنتجات</h2>
+        <div class="category-tabs">
+            <button class="category-tab active" onclick="switchCategory('الملابس', this)">الملابس</button>
+            <button class="category-tab" onclick="switchCategory('الإلكترونيات', this)">الإلكترونيات</button>
+            <button class="category-tab" onclick="switchCategory('الأحذية', this)">الأحذية</button>
+        </div>
+
+        <div id="الملابس" class="products-content active">
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">👕</div>
+                    <div class="product-info">
+                        <h3 class="product-name">قميص رجالي قطن</h3>
+                        <p class="product-description">قميص عالي الجودة من قطن 100% مع تصميم عصري وألوان متنوعة</p>
+                        <button class="product-btn">أضف للطلب</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">👗</div>
+                    <div class="product-info">
+                        <h3 class="product-name">فستان نسائي كاجوال</h3>
+                        <p class="product-description">فستان مريح وأنيق مناسب للاستخدام اليومي بتصاميم حديثة</p>
+                        <button class="product-btn">أضف للطلب</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🧥</div>
+                    <div class="product-info">
+                        <h3 class="product-name">جاكيت صوف فاخر</h3>
+                        <p class="product-description">جاكيت دافئ وأنيق من أفضل أنواع الصوف بتصميم كلاسيكي</p>
+                        <button class="product-btn">أضف للطلب</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="الإلكترونيات" class="products-content">
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">🎧</div>
+                    <div class="product-info">
+                        <h3 class="product-name">سماعات رأس لاسلكية</h3>
+                        <p class="product-description">سماعات بلوتوث عالية الجودة مع صوت استيريو واضح وبطارية طويلة الأمد</p>
+                        <button class="product-btn">أضف للطلب</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">📱</div>
+                    <div class="product-info">
+                        <h3 class="product-name">حامل جوال مغناطيسي</h3>
+                        <p class="product-description">حامل قوي وآمن للجوال في السيارة مع مغناطيس قوي وتصميم ثابت</p>
+                        <button class="product-btn">أضف للطلب</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🔌</div>
+                    <div class="product-info">
+                        <h3 class="product-name">كابل شحن سريع</h3>
+                        <p class="product-description">كابل عالي الجودة يدعم الشحن السريع وآمن ومتين لأكثر من جهاز</p>
+                        <button class="product-btn">أضف للطلب</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="الأحذية" class="products-content">
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">👞</div>
+                    <div class="product-info">
+                        <h3 class="product-name">حذاء رسمي جلد</h3>
+                        <p class="product-description">حذاء رسمي فاخر من جلد طبيعي برّاق وتصميم كلاسيكي أنيق</p>
+                        <button class="product-btn">أضف للطلب</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🏃</div>
+                    <div class="product-info">
+                        <h3 class="product-name">حذاء رياضي للركض</h3>
+                        <p class="product-description">حذاء رياضي مريح وخفيف الوزن مع دعم قوي وتصميم عصري</p>
+                        <button class="product-btn">أضف للطلب</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">👠</div>
+                    <div class="product-info">
+                        <h3 class="product-name">حذاء كعب عالي</h3>
+                        <p class="product-description">حذاء نسائي أنيق بكعب عالي مريح مع تصاميم متنوعة وألوان جذابة</p>
+                        <button class="product-btn">أضف للطلب</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -649,7 +853,7 @@
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>يعتمد على نوع المنتج والمصنع. بعض المصانع تقبل طلبات صغيرة، وبعضها يطلب كميات أكبر. عندما ترسل المنتج والكمية، نخبرك بشكل واضح هل الطلب مناسب للمصنع أم لا.</p>
+                    <p>يعتمد على نوع المنتج والمصنع. بعض المصانع تقبل طلبات صغيرة، وبعضها يطلب كميات أكبر. عندما ترسل طلبك، نستطلع هذا لك وأخبرك بالخيارات المتاحة.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -658,7 +862,7 @@
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>الطريقة تتحدد حسب المصنع والطلب. بعض الشراكات تشتغل بالدفع المقدم، وبعضها على أساس تفاهمات مختلفة. التفاصيل تتضح في العرض المكتوب قبل أي التزام.</p>
+                    <p>الطريقة تتحدد حسب المصنع والطلب. بعض الشراكات تشتغل بالدفع المقدم، وبعضها على أساس تفاهمات مختلفة. MZ يساعدك على الاتفاق على طريقة الدفع المناسبة لك.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -667,7 +871,7 @@
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>يعتمد على نوع المنتج والكمية ومواعيد الإنتاج. غالباً يبدأ البحث فوراً، ثم الاتفاق، وبعدها الإنتاج، ثم الشحن. التفاصيل الدقيقة تكون مكتوبة في العرض النهائي.</p>
+                    <p>يعتمد على نوع المنتج والكمية ومواعيد الإنتاج. غالباً يبدأ البحث فوراً، ثم الاتفاق، وبعدها الإنتاج والشحن. عادةً يستغرق 2-4 أسابيع حسب الطلب.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -676,7 +880,7 @@
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>أيوه. نتابع الجودة قبل الشحن، ونرسل لك الصور أو الفيديوهات المناسبة لتتأكد من المنتج قبل الإرسال.</p>
+                    <p>أيوه. نتابع الجودة قبل الشحن، ونرسل لك الصور أو الفيديوهات المناسبة لتتأكد من المنتج قبل الإرسال. هذا جزء أساسي من خدمتنا.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -685,7 +889,7 @@
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>نقوم بمتابعة الشحن مع المصنع، ونراقب التنفيذ حتى الوصول إلى السودان. التفاصيل الخاصة بالشحن يتم توضيحها قبل الإتفاق.</p>
+                    <p>نقوم بمتابعة الشحن مع المصنع، ونراقب التنفيذ حتى الوصول إلى السودان. التفاصيل الخاصة بالشحن يتم تحديدها مع عرض السعر.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -694,7 +898,7 @@
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>العمولة تتحدد حسب نوع الطلب، الكمية، ومدى الخدمات المطلوبة. كل شيء مكتوب في العرض المخصص لك، وموضح قبل أي دفع.</p>
+                    <p>العمولة تتحدد حسب نوع الطلب، الكمية، ومدى الخدمات المطلوبة. كل شيء مكتوب في العرض المخصص لك، وما في أي تكاليف مخفية.</p>
                 </div>
             </div>
         </div>
@@ -732,7 +936,7 @@
     <section class="cta-section">
         <h2 class="section-title">الآن دورك</h2>
         <div class="cta-content">
-            <p class="cta-message">إذا أنت تحتاج منتج من مصر، ابعت طلبك اليوم. نبدأ من البحث، ننتهي مع تسليمك البضاعة في السودان بطريقة منظّمة وسهلة.</p>
+            <p class="cta-message">إذا أنت تحتاج منتج من مصر، ابعت طلبك اليوم. نبدأ من البحث، ننتهي مع تسليمك البضاعة في السودان.</p>
             <div class="cta-buttons">
                 <a href="https://wa.me/201140267198" class="btn btn-whatsapp-large" target="_blank">راسلنا على واتساب الآن</a>
                 <a href="tel:+201140267198" class="btn btn-phone-alt">أو اتصل بنا</a>
@@ -767,7 +971,7 @@
 
     <a href="https://wa.me/201140267198" class="floating-whatsapp" target="_blank" aria-label="WhatsApp">
         <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.46 0 .08 5.37.08 12c0 2.1.55 4.15 1.6 5.96L0 24l6.17-1.59a11.96 11.96 0 0 0 5.89 1.79h.01c6.6 0 11.98-5.38 11.98-11.98 0-3.2-1.24-6.22-3.48-8.46zm-8.46 18.43h-.01a9.94 9.94 0 0 1-5.07-1.39l-.35-.21-3.66.94 1-3.55-.24-.37a9.96 9.96 0 0 1 15.97-12.2 9.96 9.96 0 0 1-7.2 17.02zm5.48-7.43c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.79-1.68-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.34.45-.51.15-.17.2-.29.3-.48.1-.19.05-.36-.02-.5-.07-.15-.67-1.61-.92-2.21-.24-.57-.49-.49-.67-.5-.17-.01-.37-.01-.57-.01-.2 0-.53.08-.8.38-.27.3-1.02 1-1.02 2.43s1.06 2.8 1.2 2.99c.15.2 2.08 3.18 5.04 4.46.7.3 1.24.48 1.67.62.7.22 1.34.19 1.85.11.56-.08 1.76-.72 2.01-1.42.25-.7.25-1.3.18-1.42-.07-.12-.25-.19-.55-.34z"/>
+            <path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.46 0 .08 5.37.08 12c0 2.1.55 4.15 1.6 5.96L0 24l6.17-1.59a11.96 11.96 0 0 0 5.89 1.79h.01c6.6 0 11.98-5.38 11.98-11.98 0-3.2-1.24-6.22-3.48-8.48zM12.06 21.9h-.01c-1.84 0-3.63-.5-5.2-1.44l-.37-.22-3.85 1 1.02-3.71-.24-.38C2.1 15.34 1.6 13.72 1.6 12c0-5.54 4.52-10.04 10.07-10.04 2.68 0 5.2 1.05 7.1 2.93 1.9 1.87 2.95 4.36 2.95 7.01 0 5.54-4.53 10.04-10.07 10.04z"/>
         </svg>
     </a>
 
@@ -788,6 +992,22 @@
                 const isOpen = item.classList.contains('active');
                 document.querySelectorAll('.faq-item').forEach(faq => faq.classList.remove('active'));
                 if (!isOpen) item.classList.add('active');
+            });
+        });
+
+        function switchCategory(category, button) {
+            document.querySelectorAll('.products-content').forEach(el => el.classList.remove('active'));
+            document.getElementById(category).classList.add('active');
+            document.querySelectorAll('.category-tab').forEach(tab => tab.classList.remove('active'));
+            button.classList.add('active');
+        }
+
+        document.querySelectorAll('.product-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const productName = btn.closest('.product-card').querySelector('.product-name').textContent;
+                const message = `مرحباً، أريد استفسار عن المنتج: ${productName}`;
+                const whatsapp = 'https://wa.me/201140267198?text=' + encodeURIComponent(message);
+                window.open(whatsapp, '_blank');
             });
         });
 
