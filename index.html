@@ -185,7 +185,6 @@
             font-weight: 600;
             font-size: 0.95rem;
             transition: all 0.2s ease;
-            font-family: 'IBM Plex Sans Arabic', sans-serif;
         }
         .category-tab:hover {
             border-color: #c8963e;
@@ -198,8 +197,8 @@
         }
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.6rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
         }
         .product-card {
             background: #f9fafb;
@@ -209,56 +208,60 @@
             transition: all 0.3s ease;
         }
         .product-card:hover {
-            transform: translateY(-4px);
             box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            transform: translateY(-4px);
         }
         .product-image {
             width: 100%;
-            height: 180px;
+            height: 220px;
+            background: #e2e8f0;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #edf2f7, #f8fafc);
-            border-bottom: 1px solid #edf2f7;
+            color: #a0aec0;
+            font-size: 3rem;
+            overflow: hidden;
         }
-        .product-image svg {
-            width: 56px;
-            height: 56px;
-            stroke: #12263f;
-            fill: none;
-            stroke-width: 1.8;
-            stroke-linecap: round;
-            stroke-linejoin: round;
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         .product-info {
-            padding: 1.2rem;
+            padding: 1.5rem;
         }
         .product-name {
-            font-size: 1.05rem;
             color: #12263f;
             font-weight: 700;
-            margin-bottom: 0.6rem;
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
         }
         .product-description {
             color: #4b5563;
             font-size: 0.9rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
         }
         .product-btn {
             width: 100%;
             background: #c8963e;
             color: white;
             padding: 0.8rem 1rem;
-            border: none;
             border-radius: 0.35rem;
+            border: none;
             font-weight: 600;
             cursor: pointer;
             font-family: 'IBM Plex Sans Arabic', sans-serif;
             transition: background 0.2s ease;
         }
-        .product-btn:hover { background: #b7802f; }
-        .products-content { display: none; }
-        .products-content.active { display: block; }
+        .product-btn:hover {
+            background: #b7802f;
+        }
+        .products-content {
+            display: none;
+        }
+        .products-content.active {
+            display: block;
+        }
 
         .problems-section, .how-works-section, .faq-section {
             background: white;
@@ -604,13 +607,6 @@
             }
             .btn { width: 100%; }
             .form-container { padding: 1.4rem; }
-            .category-tabs {
-                gap: 0.5rem;
-            }
-            .category-tab {
-                padding: 0.6rem 1rem;
-                font-size: 0.85rem;
-            }
         }
     </style>
 </head>
@@ -633,7 +629,7 @@
     <section class="hero">
         <div class="hero-content">
             <h1>اشتري من المصنع المصري مباشرة</h1>
-            <p class="hero-subtitle">بدون وسطاء، بدون تعقيد، وبسعر أحسن. نبحث لك عن المصنع المناسب، نتفاوض، نتابع الجودة، ثم نسلمك البضاعة في السودان.</p>
+            <p class="hero-subtitle">وسيط واحد موثوق، بدون تعقيد، وسعر واضح قبل أي دفع. نبحث لك عن المصنع المناسب، نتفاوض، نتابع الجودة، ثم نسلمك البضاعة في السودان.</p>
             <div class="hero-buttons">
                 <button class="btn btn-primary" onclick="document.getElementById('request').scrollIntoView({behavior: 'smooth'})">اطلب عرض سعر</button>
                 <a href="tel:+201140267198" class="btn btn-secondary">اتصل الآن</a>
@@ -659,9 +655,7 @@
         <div id="cars" class="products-content active">
             <div class="products-grid">
                 <div class="product-card">
-                    <div class="product-image">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8h10l1 8H6l1-8zm2 0V6a3 3 0 0 1 6 0v2M9 12h6"/></svg>
-                    </div>
+                    <div class="product-image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8h10l1 8H6l1-8zm2 0V6a3 3 0 0 1 6 0v2M9 12h6"/></svg></div>
                     <div class="product-info">
                         <h3 class="product-name">فلتر هواء</h3>
                         <p class="product-description">قطعة تشغيل أساسية للحفاظ على أداء المحرك ونظافة الهواء الداخل.</p>
@@ -669,9 +663,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M7 17h10l2-8H5l2 8zm1-8l1-3h8l1 3"/></svg>
-                    </div>
+                    <div class="product-image"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M7 17h10l2-8H5l2 8zm1-8l1-3h8l1 3"/></svg></div>
                     <div class="product-info">
                         <h3 class="product-name">مكابح</h3>
                         <p class="product-description">مكوّنات فرملة موثوقة توفر أمان التشغيل واستقرار التوقف.</p>
@@ -679,9 +671,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 14l4-4 3 3 5-6M6 18h12"/><circle cx="8" cy="6" r="2"/><circle cx="18" cy="7" r="2"/></svg>
-                    </div>
+                    <div class="product-image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 14l4-4 3 3 5-6M6 18h12"/><circle cx="8" cy="6" r="2"/><circle cx="18" cy="7" r="2"/></svg></div>
                     <div class="product-info">
                         <h3 class="product-name">سير نقل الحركة</h3>
                         <p class="product-description">جزء أساسي لنقل الطاقة بين المكونات مع أداء مستقر ومتانة عالية.</p>
@@ -689,9 +679,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M5 7h14M7 14h10M9 21h6"/></svg>
-                    </div>
+                    <div class="product-image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M5 7h14M7 14h10M9 21h6"/></svg></div>
                     <div class="product-info">
                         <h3 class="product-name">مصباح أمامي</h3>
                         <p class="product-description">مصباح يوفر إضاءة واضحة وموثوقة أثناء القيادة في مختلف الظروف.</p>
@@ -704,9 +692,7 @@
         <div id="oils" class="products-content">
             <div class="products-grid">
                 <div class="product-card">
-                    <div class="product-image">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4h6v4h3v12H6V8h3V4Zm3 4V6h0"/></svg>
-                    </div>
+                    <div class="product-image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4h6v4h3v12H6V8h3V4Zm3 4V6h0"/></svg></div>
                     <div class="product-info">
                         <h3 class="product-name">زيت محرك</h3>
                         <p class="product-description">زيت اصطناعي أو شبه اصطناعي يساهم في تقليل الاحتكاك وحماية المحرك.</p>
@@ -714,9 +700,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 3h4v6h3v12h-10V9h3V3zm-2 10h8"/></svg>
-                    </div>
+                    <div class="product-image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 3h4v6h3v12h-10V9h3V3zm-2 10h8"/></svg></div>
                     <div class="product-info">
                         <h3 class="product-name">زيت ناقل حركة</h3>
                         <p class="product-description">منتج مرن يضمن سلاسة التشغيل ويقلل التآكل داخل نظام النقل.</p>
@@ -724,9 +708,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M5 9h14M7 5h10v14H7z"/></svg>
-                    </div>
+                    <div class="product-image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M5 9h14M7 5h10v14H7z"/></svg></div>
                     <div class="product-info">
                         <h3 class="product-name">سائل تبريد</h3>
                         <p class="product-description">مادة تبريد موحدة تحافظ على حرارة التشغيل ضمن النطاق المناسب.</p>
@@ -734,9 +716,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h12v12H6zM9 9h6v6H9z"/></svg>
-                    </div>
+                    <div class="product-image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h12v12H6zM9 9h6v6H9z"/></svg></div>
                     <div class="product-info">
                         <h3 class="product-name">زيت هيدروليكي</h3>
                         <p class="product-description">مادة تشغيل متخصصة للحفاظ على كفاءة الأنظمة الهيدروليكية والأجزاء المتحركة.</p>
@@ -749,9 +729,7 @@
         <div id="food" class="products-content">
             <div class="products-grid">
                 <div class="product-card">
-                    <div class="product-image">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h10v14H7zM9 9h6M9 13h6"/></svg>
-                    </div>
+                    <div class="product-image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h10v14H7zM9 9h6M9 13h6"/></svg></div>
                     <div class="product-info">
                         <h3 class="product-name">معلبات طعام</h3>
                         <p class="product-description">منتجات غذائية قابلة للتخزين مع جودة مناسبة وتغليف آمن.</p>
@@ -759,9 +737,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 18c1.5-4 4.5-6 7-6s5.5 2 7 6M7 9c1.5-2 3.5-3 5-3s3.5 1 5 3"/></svg>
-                    </div>
+                    <div class="product-image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 18c1.5-4 4.5-6 7-6s5.5 2 7 6M7 9c1.5-2 3.5-3 5-3s3.5 1 5 3"/></svg></div>
                     <div class="product-info">
                         <h3 class="product-name">منتجات الحبوب</h3>
                         <p class="product-description">مستلزمات غذائية أساسية ذات استخدام واسع في المتاجر والمطاعم.</p>
@@ -769,9 +745,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10H7zM9 9h6v6H9z"/><path d="M10 3h4v4M10 17h4v4"/></svg>
-                    </div>
+                    <div class="product-image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10H7zM9 9h6v6H9z"/><path d="M10 3h4v4M10 17h4v4"/></svg></div>
                     <div class="product-info">
                         <h3 class="product-name">مشروبات غازية</h3>
                         <p class="product-description">منتجات تشبع احتياجات العملاء وتناسب البيع السريع في المحلات.</p>
@@ -779,9 +753,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4h8l2 4v12H6V8l2-4zm2 4h4"/></svg>
-                    </div>
+                    <div class="product-image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4h8l2 4v12H6V8l2-4zm2 4h4"/></svg></div>
                     <div class="product-info">
                         <h3 class="product-name">مواد غذائية منزلية</h3>
                         <p class="product-description">عناصر غذائية متنوعة للاستخدام اليومي داخل المنازل والمخازن.</p>
@@ -794,9 +766,7 @@
         <div id="machines" class="products-content">
             <div class="products-grid">
                 <div class="product-card">
-                    <div class="product-image">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18V8l5-4 5 4v10M9 18v-6h6v6"/></svg>
-                    </div>
+                    <div class="product-image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18V8l5-4 5 4v10M9 18v-6h6v6"/></svg></div>
                     <div class="product-info">
                         <h3 class="product-name">مطرقة يدوية</h3>
                         <p class="product-description">أداة تشغيل فعالة للمهام اليدوية المختلفة في الورش والمراكز.</p>
@@ -804,9 +774,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8h10l2 10H5l2-10zm2-3h6l1 3H8l1-3z"/></svg>
-                    </div>
+                    <div class="product-image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8h10l2 10H5l2-10zm2-3h6l1 3H8l1-3z"/></svg></div>
                     <div class="product-info">
                         <h3 class="product-name">مجموعة أدوات</h3>
                         <p class="product-description">مجموعة شاملة من الأدوات الأساسية لمختلف أعمال الصيانة والإنشاء.</p>
@@ -814,9 +782,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 16l8-8 8 8M8 12l4-4 4 4M6 18h12"/></svg>
-                    </div>
+                    <div class="product-image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 16l8-8 8 8M8 12l4-4 4 4M6 18h12"/></svg></div>
                     <div class="product-info">
                         <h3 class="product-name">دريلة كهربائية</h3>
                         <p class="product-description">آلة متعددة الاستخدامات لتشغيل القطع والبرش في الأعمال المعدنية.</p>
@@ -824,9 +790,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18h16M8 18V8h8v10M10 8V5h4v3"/></svg>
-                    </div>
+                    <div class="product-image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18h16M8 18V8h8v10M10 8V5h4v3"/></svg></div>
                     <div class="product-info">
                         <h3 class="product-name">آلة خلط</h3>
                         <p class="product-description">معدات تشغيل بقدرة مناسبة للخلط والتحريك داخل الورش والمصانع.</p>
@@ -839,9 +803,7 @@
         <div id="machineParts" class="products-content">
             <div class="products-grid">
                 <div class="product-card">
-                    <div class="product-image">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7"/><path d="M12 5v14M5 12h14"/></svg>
-                    </div>
+                    <div class="product-image"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7"/><path d="M12 5v14M5 12h14"/></svg></div>
                     <div class="product-info">
                         <h3 class="product-name">بكرة</h3>
                         <p class="product-description">قطعة تشغيل متينة تدعم الحركة والتوجيه في الأنظمة الميكانيكية.</p>
@@ -849,9 +811,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10H7zM9 9h6v6H9z"/></svg>
-                    </div>
+                    <div class="product-image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10H7zM9 9h6v6H9z"/></svg></div>
                     <div class="product-info">
                         <h3 class="product-name">براغي ومسامير</h3>
                         <p class="product-description">مكونات ربط أساسية تستخدم في تجميع وتشغيل مختلف المعدات.</p>
@@ -859,9 +819,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M12 4v16M8 8l8 8M16 8l-8 8"/></svg>
-                    </div>
+                    <div class="product-image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M12 4v16M8 8l8 8M16 8l-8 8"/></svg></div>
                     <div class="product-info">
                         <h3 class="product-name">حزام نقل</h3>
                         <p class="product-description">قطعة حركة موثوقة تنقل الطاقة بين المحاور بشكل مستقر وفعال.</p>
@@ -869,9 +827,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10H7zM10 10h4v4h-4z"/></svg>
-                    </div>
+                    <div class="product-image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10H7zM10 10h4v4h-4z"/></svg></div>
                     <div class="product-info">
                         <h3 class="product-name">مساند وأجزاء دوارة</h3>
                         <p class="product-description">قطع دعم واستقرار للأجزاء المتحركة لضمان التشغيل السلس وتقليل الاهتزاز.</p>
