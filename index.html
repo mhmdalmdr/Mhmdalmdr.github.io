@@ -1,1032 +1,195 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MZ - وكالة توريد وتجارة تربط التجار في السودان بالمصانع في مصر. اشتري من المصنع مباشرة بسعر أحسن.">
-    <meta name="theme-color" content="#12263f">
-    <meta property="og:title" content="MZ | اشتري من المصنع المصري مباشرة">
-    <meta property="og:description" content="شراء آمن وسعر عادل بدون وسطاء. توصيل مباشر لمحلك في السودان.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mhmdalmdr.github.io">
-    <title>MZ | شراء مباشر من المصانع المصرية</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'IBM Plex Sans Arabic', sans-serif;
-            background: #f7f8fa;
-            color: #1f2937;
-            line-height: 1.6;
-        }
-        a { text-decoration: none; }
-        img, svg { display: block; max-width: 100%; }
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: white;
-            border-bottom: 1px solid #e2e8f0;
-            box-shadow: 0 1px 0 rgba(0,0,0,0.04);
-        }
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #12263f;
-            letter-spacing: -0.05em;
-        }
-        .nav-links {
-            display: flex;
-            align-items: center;
-            list-style: none;
-            gap: 2rem;
-        }
-        .nav-links a {
-            color: #1f2937;
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-        .nav-links a:hover { color: #c8963e; }
-        .mobile-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: #12263f;
-            font-size: 1.6rem;
-            cursor: pointer;
-        }
-
-        .hero {
-            background: #f7f8fa;
-            border-bottom: 1px solid #e2e8f0;
-            padding: 5rem 2rem 4rem;
-        }
-        .hero-content {
-            max-width: 920px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .hero h1 {
-            color: #12263f;
-            font-size: clamp(2rem, 4vw, 3.2rem);
-            line-height: 1.35;
-            margin-bottom: 0.8rem;
-            font-weight: 700;
-        }
-        .hero-subtitle {
-            max-width: 660px;
-            margin: 0 auto 2rem;
-            color: #4b5563;
-            font-size: 1.08rem;
-        }
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-        }
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 48px;
-            padding: 0.85rem 1.7rem;
-            border-radius: 0.35rem;
-            font-size: 0.95rem;
-            font-weight: 600;
-            cursor: pointer;
-            border: none;
-            font-family: 'IBM Plex Sans Arabic', sans-serif;
-            transition: all 0.2s ease;
-        }
-        .btn-primary {
-            background: #c8963e;
-            color: #fff;
-        }
-        .btn-primary:hover { background: #b7802f; }
-        .btn-secondary {
-            background: transparent;
-            border: 1px solid #12263f;
-            color: #12263f;
-        }
-        .btn-secondary:hover {
-            background: #12263f;
-            color: white;
-        }
-        .hero-trust {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .trust-point {
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 0.35rem;
-            padding: 1rem 0.9rem;
-            color: #4b5563;
-            font-size: 0.9rem;
-        }
-
-        section {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4.5rem 2rem;
-        }
-        .section-title {
-            text-align: center;
-            margin-bottom: 2.5rem;
-            color: #12263f;
-            font-size: clamp(1.8rem, 3vw, 2.4rem);
-            position: relative;
-            padding-bottom: 0.9rem;
-        }
-        .section-title::after {
-            content: "";
-            display: block;
-            width: 75px;
-            height: 3px;
-            background: #c8963e;
-            margin: 0.8rem auto 0;
-        }
-
-        .products-section {
-            background: white;
-            border-top: 1px solid #e2e8f0;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        .category-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2.5rem;
-            flex-wrap: wrap;
-        }
-        .category-tab {
-            padding: 0.7rem 1.5rem;
-            border: 2px solid #e2e8f0;
-            background: white;
-            color: #1f2937;
-            border-radius: 0.35rem;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.2s ease;
-        }
-        .category-tab:hover {
-            border-color: #c8963e;
-            color: #c8963e;
-        }
-        .category-tab.active {
-            background: #c8963e;
-            color: white;
-            border-color: #c8963e;
-        }
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        .product-card {
-            background: #f9fafb;
-            border: 1px solid #edf2f7;
-            border-radius: 0.35rem;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        .product-card:hover {
-            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-            transform: translateY(-4px);
-        }
-        .product-image {
-            width: 100%;
-            height: 220px;
-            background: #e2e8f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #a0aec0;
-            font-size: 3rem;
-            overflow: hidden;
-        }
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .product-info {
-            padding: 1.5rem;
-        }
-        .product-name {
-            color: #12263f;
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 0.8rem;
-        }
-        .product-description {
-            color: #4b5563;
-            font-size: 0.9rem;
-            margin-bottom: 1.2rem;
-        }
-        .product-btn {
-            width: 100%;
-            background: #c8963e;
-            color: white;
-            padding: 0.8rem 1rem;
-            border-radius: 0.35rem;
-            border: none;
-            font-weight: 600;
-            cursor: pointer;
-            font-family: 'IBM Plex Sans Arabic', sans-serif;
-            transition: background 0.2s ease;
-        }
-        .product-btn:hover {
-            background: #b7802f;
-        }
-        .products-content {
-            display: none;
-        }
-        .products-content.active {
-            display: block;
-        }
-
-        .problems-section, .how-works-section, .faq-section {
-            background: white;
-            border-top: 1px solid #e2e8f0;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .problems-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.8rem;
-        }
-        .problem-card {
-            background: #f9fafb;
-            padding: 1.7rem 1.3rem;
-            border: 1px solid #edf2f7;
-            border-radius: 0.35rem;
-        }
-        .problem-title {
-            color: #12263f;
-            font-weight: 700;
-            font-size: 1.05rem;
-            margin-bottom: 0.8rem;
-        }
-        .problem-challenge {
-            background: #fef2f2;
-            color: #c14a4a;
-            border-right: 3px solid #d94545;
-            font-size: 0.93rem;
-            padding: 0.8rem;
-            border-radius: 0.25rem;
-            margin-bottom: 0.8rem;
-        }
-        .problem-solution {
-            background: #f0fdf4;
-            color: #2d7a3e;
-            border-right: 3px solid #2d7a3e;
-            font-size: 0.93rem;
-            padding: 0.8rem;
-            border-radius: 0.25rem;
-        }
-
-        .how-works-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1.5rem;
-        }
-        .how-step {
-            background: #f9fafb;
-            border: 1px solid #edf2f7;
-            padding: 1.8rem 1.4rem 1.5rem;
-            border-radius: 0.35rem;
-            text-align: center;
-        }
-        .step-number {
-            width: 48px;
-            height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            border-radius: 50%;
-            background: #12263f;
-            color: white;
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-        .how-step h3 {
-            color: #12263f;
-            font-size: 1.08rem;
-            margin-bottom: 0.6rem;
-            font-weight: 700;
-        }
-        .how-step p {
-            color: #4b5563;
-            font-size: 0.92rem;
-        }
-
-        .trust-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5rem;
-        }
-        .trust-item {
-            background: #f9fafb;
-            border: 1px solid #edf2f7;
-            border-right: 3px solid #c8963e;
-            border-radius: 0.35rem;
-            padding: 1.6rem 1.3rem;
-        }
-        .trust-item h3 {
-            color: #12263f;
-            font-size: 1.12rem;
-            margin-bottom: 0.6rem;
-            font-weight: 700;
-        }
-        .trust-item p {
-            color: #4b5563;
-            font-size: 0.94rem;
-        }
-
-        .needs-section {
-            background: #f7f8fa;
-        }
-        .needs-list {
-            max-width: 700px;
-            margin: 0 auto;
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 0.35rem;
-            padding: 2rem 1.5rem;
-        }
-        .needs-list ul {
-            list-style: none;
-        }
-        .needs-list li {
-            color: #1f2937;
-            padding: 0.9rem 0;
-            border-bottom: 1px solid #edf2f7;
-            font-size: 0.95rem;
-        }
-        .needs-list li:last-child {
-            border-bottom: none;
-        }
-        .needs-list li::before {
-            content: '✓';
-            color: #c8963e;
-            margin-left: 0.7rem;
-            font-weight: 700;
-        }
-
-        .faq-container {
-            max-width: 760px;
-            margin: 0 auto;
-        }
-        .faq-item {
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 0.35rem;
-            overflow: hidden;
-            margin-bottom: 1rem;
-        }
-        .faq-question {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #f9fafb;
-            padding: 1.2rem 1.2rem;
-            cursor: pointer;
-        }
-        .faq-question h3 {
-            color: #12263f;
-            font-size: 0.98rem;
-            font-weight: 600;
-        }
-        .faq-toggle {
-            color: #c8963e;
-            font-size: 1.5rem;
-            font-weight: 700;
-            transition: transform 0.2s ease;
-        }
-        .faq-item.active .faq-toggle {
-            transform: rotate(180deg);
-        }
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.25s ease;
-            background: white;
-            color: #4b5563;
-        }
-        .faq-item.active .faq-answer {
-            max-height: 300px;
-        }
-        .faq-answer p {
-            padding: 1rem 1.2rem 1.2rem;
-            font-size: 0.93rem;
-        }
-
-        .request-form {
-            background: #f7f8fa;
-        }
-        .form-container {
-            max-width: 620px;
-            background: white;
-            margin: 0 auto;
-            padding: 2rem;
-            border: 1px solid #e2e8f0;
-            border-radius: 0.4rem;
-        }
-        .form-group {
-            margin-bottom: 1rem;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 0.45rem;
-            color: #12263f;
-            font-weight: 600;
-        }
-        .form-group input, .form-group textarea {
-            width: 100%;
-            border: 1px solid #cbd5e0;
-            border-radius: 0.35rem;
-            padding: 0.8rem 0.9rem;
-            font-size: 0.95rem;
-            font-family: 'IBM Plex Sans Arabic', sans-serif;
-            color: #1f2937;
-            background: white;
-        }
-        .form-group textarea {
-            min-height: 110px;
-            resize: vertical;
-        }
-        .form-submit {
-            width: 100%;
-            margin-top: 0.5rem;
-            background: #c8963e;
-            color: white;
-        }
-        .form-submit:hover { background: #b7802f; }
-
-        .cta-section {
-            background: #12263f;
-            color: white;
-            text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.08);
-        }
-        .cta-content {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        .cta-message {
-            color: #dbe3ed;
-            margin-bottom: 2rem;
-            font-size: 1.05rem;
-        }
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-        .btn-whatsapp-large {
-            background: #25d366;
-            color: white;
-            padding: 1.1rem 2.6rem;
-            font-size: 1.05rem;
-        }
-        .btn-whatsapp-large:hover { background: #1db65e; }
-        .btn-phone-alt {
-            background: #c8963e;
-            color: white;
-            padding: 1.1rem 2.6rem;
-            font-size: 1.05rem;
-        }
-        .btn-phone-alt:hover { background: #b7802f; }
-
-        .contact {
-            background: #12263f;
-            color: white;
-            border-top: 1px solid rgba(255,255,255,0.08);
-        }
-        .contact .section-title { color: white; }
-        .contact .section-title::after { background: #c8963e; }
-        .contact-content {
-            max-width: 720px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .contact-description {
-            color: #dbe3ed;
-            margin-bottom: 1.5rem;
-        }
-        .contact-methods {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1rem;
-            margin-bottom: 1.8rem;
-        }
-        .contact-method {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-left: 3px solid #c8963e;
-            border-radius: 0.35rem;
-            padding: 1.2rem 1rem;
-        }
-        .contact-method h4 {
-            color: #c8963e;
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
-        }
-        .contact-method a {
-            color: white;
-            font-size: 0.95rem;
-        }
-
-        footer {
-            background: #0d1d2e;
-            color: #a3b2c3;
-            text-align: center;
-            padding: 1.5rem 1rem;
-        }
-
-        .floating-whatsapp {
-            position: fixed;
-            left: 1.5rem;
-            bottom: 1.5rem;
-            width: 58px;
-            height: 58px;
-            border-radius: 50%;
-            background: #25d366;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 10px 25px rgba(37,211,102,0.25);
-            z-index: 999;
-        }
-        .floating-whatsapp svg {
-            width: 30px;
-            height: 30px;
-            fill: white;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: white;
-                flex-direction: column;
-                padding: 1rem 0 1.2rem;
-                border-bottom: 1px solid #e2e8f0;
-            }
-            .nav-links.active { display: flex; }
-            .mobile-toggle { display: block; }
-            .hero { padding: 3.5rem 1rem 3rem; }
-            section { padding: 3.5rem 1rem; }
-            .hero-buttons, .cta-buttons {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .btn { width: 100%; }
-            .form-container { padding: 1.4rem; }
-            .category-tabs {
-                gap: 0.5rem;
-            }
-            .category-tab {
-                padding: 0.6rem 1rem;
-                font-size: 0.85rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <nav>
-            <a href="#" class="logo">MZ</a>
-            <button class="mobile-toggle" id="mobile-toggle" aria-label="Open menu">☰</button>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#products">المنتجات</a></li>
-                <li><a href="#problems">المشاكل والحل</a></li>
-                <li><a href="#how-works">الخطوات</a></li>
-                <li><a href="#trust">ليش تثق</a></li>
-                <li><a href="#faq">الأسئلة</a></li>
-                <li><a href="#request">اطلب</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <div class="hero-content">
-            <h1>اشتري من المصنع المصري مباشرة</h1>
-            <p class="hero-subtitle">بدون وسطاء، بدون تعقيد، وبسعر أحسن. نبحث لك عن المصنع المناسب، نتفاوض، نتابع الجودة، ثم نسلمك البضاعة في السودان.</p>
-            <div class="hero-buttons">
-                <button class="btn btn-primary" onclick="document.getElementById('request').scrollIntoView({behavior: 'smooth'})">اطلب عرض سعر</button>
-                <a href="tel:+201140267198" class="btn btn-secondary">اتصل الآن</a>
-            </div>
-            <div class="hero-trust">
-                <div class="trust-point">تواصل مباشر معك على واتساب</div>
-                <div class="trust-point">عرض سعر مكتوب وواضح قبل أي دفع</div>
-                <div class="trust-point">متابعة كاملة لين تستلم البضاعة</div>
-            </div>
-        </div>
-    </section>
-
     <section id="products" class="products-section">
         <h2 class="section-title">المنتجات</h2>
         <div class="category-tabs">
-            <button class="category-tab active" onclick="switchCategory('الملابس', this)">الملابس</button>
-            <button class="category-tab" onclick="switchCategory('الإلكترونيات', this)">الإلكترونيات</button>
-            <button class="category-tab" onclick="switchCategory('الأحذية', this)">الأحذية</button>
+            <button class="category-tab active" onclick="switchCategory('cars', this)">قطع غيار السيارات</button>
+            <button class="category-tab" onclick="switchCategory('oils', this)">الزيوت</button>
+            <button class="category-tab" onclick="switchCategory('food', this)">المنتجات الغذائية</button>
+            <button class="category-tab" onclick="switchCategory('machines', this)">المعدات والآلات</button>
+            <button class="category-tab" onclick="switchCategory('machineParts', this)">قطع غيار المعدات والآلات</button>
         </div>
 
-        <div id="الملابس" class="products-content active">
+        <div id="cars" class="products-content active">
             <div class="products-grid">
                 <div class="product-card">
-                    <div class="product-image">👕</div>
+                    <div class="product-image">🔧</div>
                     <div class="product-info">
-                        <h3 class="product-name">قميص رجالي قطن</h3>
-                        <p class="product-description">قميص عالي الجودة من قطن 100% مع تصميم عصري وألوان متنوعة</p>
+                        <h3 class="product-name">فلتر هواء</h3>
+                        <p class="product-description">قطعة تشغيل أساسية للحفاظ على أداء المحرك ونظافة الهواء الداخل.</p>
                         <button class="product-btn">أضف للطلب</button>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">👗</div>
+                    <div class="product-image">🛞</div>
                     <div class="product-info">
-                        <h3 class="product-name">فستان نسائي كاجوال</h3>
-                        <p class="product-description">فستان مريح وأنيق مناسب للاستخدام اليومي بتصاميم حديثة</p>
+                        <h3 class="product-name">مكابح</h3>
+                        <p class="product-description">مكوّنات فرملة موثوقة توفر أمان التشغيل واستقرار التوقف.</p>
                         <button class="product-btn">أضف للطلب</button>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">🧥</div>
+                    <div class="product-image">⚙️</div>
                     <div class="product-info">
-                        <h3 class="product-name">جاكيت صوف فاخر</h3>
-                        <p class="product-description">جاكيت دافئ وأنيق من أفضل أنواع الصوف بتصميم كلاسيكي</p>
+                        <h3 class="product-name">سير نقل الحركة</h3>
+                        <p class="product-description">جزء أساسي لنقل الطاقة بين المكونات مع أداء مستقر ومتانة عالية.</p>
+                        <button class="product-btn">أضف للطلب</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">💡</div>
+                    <div class="product-info">
+                        <h3 class="product-name">مصباح أمامي</h3>
+                        <p class="product-description">مصباح يوفر إضاءة واضحة وموثوقة أثناء القيادة في مختلف الظروف.</p>
                         <button class="product-btn">أضف للطلب</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div id="الإلكترونيات" class="products-content">
+        <div id="oils" class="products-content">
             <div class="products-grid">
                 <div class="product-card">
-                    <div class="product-image">🎧</div>
+                    <div class="product-image">🛢️</div>
                     <div class="product-info">
-                        <h3 class="product-name">سماعات رأس لاسلكية</h3>
-                        <p class="product-description">سماعات بلوتوث عالية الجودة مع صوت استيريو واضح وبطارية طويلة الأمد</p>
+                        <h3 class="product-name">زيت محرك</h3>
+                        <p class="product-description">زيت اصطناعي أو شبه اصطناعي يساهم في تقليل الاحتكاك وحماية المحرك.</p>
                         <button class="product-btn">أضف للطلب</button>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">📱</div>
+                    <div class="product-image">🧴</div>
                     <div class="product-info">
-                        <h3 class="product-name">حامل جوال مغناطيسي</h3>
-                        <p class="product-description">حامل قوي وآمن للجوال في السيارة مع مغناطيس قوي وتصميم ثابت</p>
+                        <h3 class="product-name">زيت ناقل حركة</h3>
+                        <p class="product-description">منتج مرن يضمن سلاسة التشغيل ويقلل التآكل داخل نظام النقل.</p>
                         <button class="product-btn">أضف للطلب</button>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">🔌</div>
+                    <div class="product-image">🌡️</div>
                     <div class="product-info">
-                        <h3 class="product-name">كابل شحن سريع</h3>
-                        <p class="product-description">كابل عالي الجودة يدعم الشحن السريع وآمن ومتين لأكثر من جهاز</p>
+                        <h3 class="product-name">سائل تبريد</h3>
+                        <p class="product-description">مادة تبريد موحدة تحافظ على حرارة التشغيل ضمن النطاق المناسب.</p>
+                        <button class="product-btn">أضف للطلب</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🧪</div>
+                    <div class="product-info">
+                        <h3 class="product-name">زيت هيدروليكي</h3>
+                        <p class="product-description">مادة تشغيل متخصصة للحفاظ على كفاءة الأنظمة الهيدروليكية والأجزاء المتحركة.</p>
                         <button class="product-btn">أضف للطلب</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div id="الأحذية" class="products-content">
+        <div id="food" class="products-content">
             <div class="products-grid">
                 <div class="product-card">
-                    <div class="product-image">👞</div>
+                    <div class="product-image">🥫</div>
                     <div class="product-info">
-                        <h3 class="product-name">حذاء رسمي جلد</h3>
-                        <p class="product-description">حذاء رسمي فاخر من جلد طبيعي برّاق وتصميم كلاسيكي أنيق</p>
+                        <h3 class="product-name">معلبات طعام</h3>
+                        <p class="product-description">منتجات غذائية قابلة للتخزين مع جودة مناسبة وتغليف آمن.</p>
                         <button class="product-btn">أضف للطلب</button>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">🏃</div>
+                    <div class="product-image">🌾</div>
                     <div class="product-info">
-                        <h3 class="product-name">حذاء رياضي للركض</h3>
-                        <p class="product-description">حذاء رياضي مريح وخفيف الوزن مع دعم قوي وتصميم عصري</p>
+                        <h3 class="product-name">منتجات الحبوب</h3>
+                        <p class="product-description">مستلزمات غذائية أساسية ذات استخدام واسع في المتاجر والمطاعم.</p>
                         <button class="product-btn">أضف للطلب</button>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">👠</div>
+                    <div class="product-image">🥤</div>
                     <div class="product-info">
-                        <h3 class="product-name">حذاء كعب عالي</h3>
-                        <p class="product-description">حذاء نسائي أنيق بكعب عالي مريح مع تصاميم متنوعة وألوان جذابة</p>
+                        <h3 class="product-name">مشروبات غازية</h3>
+                        <p class="product-description">منتجات تشبع احتياجات العملاء وتناسب البيع السريع في المحلات.</p>
+                        <button class="product-btn">أضف للطلب</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🍯</div>
+                    <div class="product-info">
+                        <h3 class="product-name">مواد غذائية منزلية</h3>
+                        <p class="product-description">عناصر غذائية متنوعة للاستخدام اليومي داخل المنازل والمخازن.</p>
+                        <button class="product-btn">أضف للطلب</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="machines" class="products-content">
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">🛠️</div>
+                    <div class="product-info">
+                        <h3 class="product-name">مطرقة يدوية</h3>
+                        <p class="product-description">أداة تشغيل فعالة للمهام اليدوية المختلفة في الورش والمراكز.</p>
+                        <button class="product-btn">أضف للطلب</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🧰</div>
+                    <div class="product-info">
+                        <h3 class="product-name">مجموعة أدوات</h3>
+                        <p class="product-description">مجموعة شاملة من الأدوات الأساسية لمختلف أعمال الصيانة والإنشاء.</p>
+                        <button class="product-btn">أضف للطلب</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">⚒️</div>
+                    <div class="product-info">
+                        <h3 class="product-name">دريلة كهربائية</h3>
+                        <p class="product-description">آلة متعددة الاستخدامات لتشغيل القطع والبرش في الأعمال المعدني��.</p>
+                        <button class="product-btn">أضف للطلب</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🏭</div>
+                    <div class="product-info">
+                        <h3 class="product-name">آلة خلط</h3>
+                        <p class="product-description">معدات تشغيل بقدرة مناسبة للخلط والتحريك داخل الورش والمصانع.</p>
+                        <button class="product-btn">أضف للطلب</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="machineParts" class="products-content">
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">🧲</div>
+                    <div class="product-info">
+                        <h3 class="product-name">بكرة</h3>
+                        <p class="product-description">قطعة تشغيل متينة تدعم الحركة والتوجيه في الأنظمة الميكانيكية.</p>
+                        <button class="product-btn">أضف للطلب</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🔩</div>
+                    <div class="product-info">
+                        <h3 class="product-name">براغي ومسامير</h3>
+                        <p class="product-description">مكونات ربط أساسية تستخدم في تجميع وتشغيل مختلف المعدات.</p>
+                        <button class="product-btn">أضف للطلب</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🧷</div>
+                    <div class="product-info">
+                        <h3 class="product-name">حزام نقل</h3>
+                        <p class="product-description">قطعة حركة موثوقة تنقل الطاقة بين المحاور بشكل مستقر وفعال.</p>
+                        <button class="product-btn">أضف للطلب</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🪛</div>
+                    <div class="product-info">
+                        <h3 class="product-name">مساند وأجزاء دوارة</h3>
+                        <p class="product-description">قطع دعم واستقرار للأجزاء المتحركة لضمان التشغيل السلس وتقليل الاهتزاز.</p>
                         <button class="product-btn">أضف للطلب</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <section id="problems" class="problems-section">
-        <h2 class="section-title">المشاكل اللي تواجه التاجر</h2>
-        <div class="problems-grid">
-            <div class="problem-card">
-                <div class="problem-title">الفشل في إيجاد مصنع موثوق</div>
-                <div class="problem-challenge">تشتري من وسيط، وما تعرفش مصدر البضاعة الحقيقي ولا جودة المنتج.</div>
-                <div class="problem-solution">MZ يحدد لك المصنع المناسب، ويبحث لك عن الخيار الأفضل من حيث السعر والجودة والموثوقية.</div>
-            </div>
-            <div class="problem-card">
-                <div class="problem-title">الوسيط يرفع السعر</div>
-                <div class="problem-challenge">الأسعار ترتفع بسبب طبقة إضافية بينك وبين المصنع، وبتطلع أنت تدفع أكثر من اللازم.</div>
-                <div class="problem-solution">MZ يشتغل مباشرة مع المصنع، ويتيح لك سعر أحسن من خلال التفاوض المباشر.</div>
-            </div>
-            <div class="problem-card">
-                <div class="problem-title">المواصفات ما تتطابق مع الاستلام</div>
-                <div class="problem-challenge">تطلب منتج معين، وتستلم شيئاً مختلفاً، أو جودة أقل من المتوقع.</div>
-                <div class="problem-solution">MZ يثبت لك المواصفات، يرسل صور وفيديوهات قبل الشحن، ويشرف على الجودة قبل الإرسال.</div>
-            </div>
-            <div class="problem-card">
-                <div class="problem-title">الشحن والتأخير يضيع الوقت</div>
-                <div class="problem-challenge">التأخير، الضياع بين المندوبين، والجهود المتفرقة يخلط العملية كلها.</div>
-                <div class="problem-solution">MZ يتابع كل خطوة من الطلب إلى التسليم، مع تحديثات واضحة على واتساب.</div>
-            </div>
-        </div>
-    </section>
-
-    <section id="how-works" class="how-works-section">
-        <h2 class="section-title">كيف نشتغل؟</h2>
-        <div class="how-works-grid">
-            <div class="how-step">
-                <div class="step-number">1</div>
-                <h3>ترسل طلبك</h3>
-                <p>تقول لنا المنتج، الكمية، السعر المطلوب، ومدينتك في السودان.</p>
-            </div>
-            <div class="how-step">
-                <div class="step-number">2</div>
-                <h3>نبحث عن المصنع</h3>
-                <p>نستطلع السوق المصري ونختار الأنسب لك من حيث الجودة والسعر.</p>
-            </div>
-            <div class="how-step">
-                <div class="step-number">3</div>
-                <h3>نتفاوض لك</h3>
-                <p>نحصل على أسعار مناسبة، ونعمل على تقليل التكلفة دون المساس بالمواصفات.</p>
-            </div>
-            <div class="how-step">
-                <div class="step-number">4</div>
-                <h3>نراقب الإنتاج</h3>
-                <p>نتابع الإنتاج، ونطلب الصور والفيديوهات قبل الإرسال.</p>
-            </div>
-            <div class="how-step">
-                <div class="step-number">5</div>
-                <h3>نشحن وتسليم</h3>
-                <p>نرتب النقل، متابعة الشحن، والتسليم إلى محلك في السودان.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="trust">
-        <h2 class="section-title">ليش تثق في MZ</h2>
-        <div class="trust-grid">
-            <div class="trust-item">
-                <h3>السعر واضح من البداية</h3>
-                <p>العمولة والتكلفة موضحة لك بوضوح قبل ما تستلم أي قرار. لا غموض، ولا مفاجآت.</p>
-            </div>
-            <div class="trust-item">
-                <h3>عرض سعر مكتوب</h3>
-                <p>قبل أي دفع، تأخذ عرض سعر مكتوب يتضمن السعر، المطلوب، والشروط الأساسية.</p>
-            </div>
-            <div class="trust-item">
-                <h3>صور وفيديو قبل الشحن</h3>
-                <p>تتأكد من المنتج قبل ما يخرج من المصنع. هذا يقلل المخاطر ويمنع الفجوات بين الطلب والاستلام.</p>
-            </div>
-            <div class="trust-item">
-                <h3>تحديثات مستمرة</h3>
-                <p>نرسل لك تحديثات على واتساب من أول طلب إلى آخر خطوة. أنت تعرف كل شيء في الوقت نفسه.</p>
-            </div>
-            <div class="trust-item">
-                <h3>قربنا من المصانع</h3>
-                <p>نحن في مصر، قريبين من المصانع، وبإمكاننا متابعة التنفيذ بشكل أفضل من بعيد.</p>
-            </div>
-            <div class="trust-item">
-                <h3>متابعة حتى الاستلام</h3>
-                <p>ما نتركك في منتصف الطريق. نتابع حتى تصل البضاعة إلى السودان وتستلمها أنت.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="needs-section">
-        <h2 class="section-title">ماذا تحتاج لتبدأ؟</h2>
-        <div class="needs-list">
-            <ul>
-                <li>اسم المنتج الذي تريده</li>
-                <li>الكمية المطلوبة</li>
-                <li>السعر المستهدف أو الميزانية</li>
-                <li>مدينة الاستلام في السودان</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="faq" class="faq-section">
-        <h2 class="section-title">الأسئلة الشائعة</h2>
-        <div class="faq-container">
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>كم أقل كمية أقدر أشتري؟</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>يعتمد على نوع المنتج والمصنع. بعض المصانع تقبل طلبات صغيرة، وبعضها يطلب كميات أكبر. عندما ترسل طلبك، نستطلع هذا لك وأخبرك بالخيارات المتاحة.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>هل يوجد طريقة دفع مناسبة؟</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>الطريقة تتحدد حسب المصنع والطلب. بعض الشراكات تشتغل بالدفع المقدم، وبعضها على أساس تفاهمات مختلفة. MZ يساعدك على الاتفاق على طريقة الدفع المناسبة لك.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>كم يستغرق الطلب من البداية للنهاية؟</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>يعتمد على نوع المنتج والكمية ومواعيد الإنتاج. غالباً يبدأ البحث فوراً، ثم الاتفاق، وبعدها الإنتاج والشحن. عادةً يستغرق 2-4 أسابيع حسب الطلب.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>هل تتابعون الجودة؟</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>أيوه. نتابع الجودة قبل الشحن، ونرسل لك الصور أو الفيديوهات المناسبة لتتأكد من المنتج قبل الإرسال. هذا جزء أساسي من خدمتنا.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>هل تؤمنون الشحن إلى السودان؟</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>نقوم بمتابعة الشحن مع المصنع، ونراقب التنفيذ حتى الوصول إلى السودان. التفاصيل الخاصة بالشحن يتم تحديدها مع عرض السعر.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>كيف يتم حساب عمولتكم؟</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>العمولة تتحدد حسب نوع الطلب، الكمية، ومدى الخدمات المطلوبة. كل شيء مكتوب في العرض المخصص لك، وما في أي تكاليف مخفية.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="request" class="request-form">
-        <h2 class="section-title">أرسل طلبك الآن</h2>
-        <div class="form-container">
-            <form id="requestForm">
-                <div class="form-group">
-                    <label for="name">اسمك</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="city">مدينتك في السودان</label>
-                    <input type="text" id="city" name="city" required>
-                </div>
-                <div class="form-group">
-                    <label for="product">اسم المنتج</label>
-                    <input type="text" id="product" name="product" required>
-                </div>
-                <div class="form-group">
-                    <label for="quantity">الكمية</label>
-                    <input type="text" id="quantity" name="quantity" required>
-                </div>
-                <div class="form-group">
-                    <label for="details">معلومات إضافية</label>
-                    <textarea id="details" name="details" placeholder="مثال: أريد منتج، مواصفات معينة، أو سعر مستهدف"></textarea>
-                </div>
-                <button type="submit" class="btn form-submit">أرسل الطلب عبر واتساب</button>
-            </form>
-        </div>
-    </section>
-
-    <section class="cta-section">
-        <h2 class="section-title">الآن دورك</h2>
-        <div class="cta-content">
-            <p class="cta-message">إذا أنت تحتاج منتج من مصر، ابعت طلبك اليوم. نبدأ من البحث، ننتهي مع تسليمك البضاعة في السودان.</p>
-            <div class="cta-buttons">
-                <a href="https://wa.me/201140267198" class="btn btn-whatsapp-large" target="_blank">راسلنا على واتساب الآن</a>
-                <a href="tel:+201140267198" class="btn btn-phone-alt">أو اتصل بنا</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <h2 class="section-title">تواصل معنا</h2>
-        <div class="contact-content">
-            <p class="contact-description">تواصل مباشر، سهل، وسريع. نرد عليك في أقرب وقت.</p>
-            <div class="contact-methods">
-                <div class="contact-method">
-                    <h4>واتساب</h4>
-                    <a href="https://wa.me/201140267198" target="_blank">+201140267198</a>
-                </div>
-                <div class="contact-method">
-                    <h4>هاتف</h4>
-                    <a href="tel:+201140267198">+201140267198</a>
-                </div>
-                <div class="contact-method">
-                    <h4>بريد</h4>
-                    <a href="mailto:mhmdalmdrdwdw@gmail.com">mhmdalmdrdwdw@gmail.com</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2026 MZ. جميع الحقوق محفوظة.</p>
-    </footer>
-
-    <a href="https://wa.me/201140267198" class="floating-whatsapp" target="_blank" aria-label="WhatsApp">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.46 0 .08 5.37.08 12c0 2.1.55 4.15 1.6 5.96L0 24l6.17-1.59a11.96 11.96 0 0 0 5.89 1.79h.01c6.6 0 11.98-5.38 11.98-11.98 0-3.2-1.24-6.22-3.48-8.48zM12.06 21.9h-.01c-1.84 0-3.63-.5-5.2-1.44l-.37-.22-3.85 1 1.02-3.71-.24-.38C2.1 15.34 1.6 13.72 1.6 12c0-5.54 4.52-10.04 10.07-10.04 2.68 0 5.2 1.05 7.1 2.93 1.9 1.87 2.95 4.36 2.95 7.01 0 5.54-4.53 10.04-10.07 10.04z"/>
-        </svg>
-    </a>
-
-    <script>
-        const mobileToggle = document.getElementById('mobile-toggle');
-        const navLinks = document.getElementById('nav-links');
-
-        mobileToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => navLinks.classList.remove('active'));
-        });
-
-        document.querySelectorAll('.faq-item').forEach(item => {
-            item.querySelector('.faq-question').addEventListener('click', () => {
-                const isOpen = item.classList.contains('active');
-                document.querySelectorAll('.faq-item').forEach(faq => faq.classList.remove('active'));
-                if (!isOpen) item.classList.add('active');
-            });
-        });
-
-        function switchCategory(category, button) {
-            document.querySelectorAll('.products-content').forEach(el => el.classList.remove('active'));
-            document.getElementById(category).classList.add('active');
-            document.querySelectorAll('.category-tab').forEach(tab => tab.classList.remove('active'));
-            button.classList.add('active');
-        }
-
-        document.querySelectorAll('.product-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const productName = btn.closest('.product-card').querySelector('.product-name').textContent;
-                const message = `مرحباً، أريد استفسار عن المنتج: ${productName}`;
-                const whatsapp = 'https://wa.me/201140267198?text=' + encodeURIComponent(message);
-                window.open(whatsapp, '_blank');
-            });
-        });
-
-        const requestForm = document.getElementById('requestForm');
-        requestForm.addEventListener('submit', function (event) {
-            event.preventDefault();
-
-            const name = document.getElementById('name').value.trim();
-            const city = document.getElementById('city').value.trim();
-            const product = document.getElementById('product').value.trim();
-            const quantity = document.getElementById('quantity').value.trim();
-            const details = document.getElementById('details').value.trim();
-
-            const message = `مرحبا، أنا ${name} من ${city}.\nأريد شراء: ${product}\nالكمية: ${quantity}${details ? `\nتفاصيل: ${details}` : ''}`;
-
-            const whatsapp = 'https://wa.me/201140267198?text=' + encodeURIComponent(message);
-            window.open(whatsapp, '_blank');
-            requestForm.reset();
-        });
-    </script>
-</body>
-</html>
